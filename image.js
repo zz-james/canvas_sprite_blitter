@@ -268,6 +268,33 @@ var memcpy = function(dst, dstOffset, src, srcOffset, length) {
 };
 
 
+/**
+ * this function replaces the background that was saved from where a sprite
+ * was going to be placed
+ * @param sprite
+ */
+var eraseSprite = function(sprite) {
+
+    //replace the background that was behind the sprite
+    var work_back;
+    var work_offset=0,offset,y;
+
+    // alias a pointer to sprite background for ease of access
+    work_back = sprite.background.buffer;
+
+    // compute offset of background in video buffer
+    offset = (sprite.y * 320) + sprite.x;
+
+    for (y=0; y<SPRITE_HEIGHT; y++)
+    {
+        // copy the next row out off screen buffer into sprite background buffer
+        memcpy(VIDEO_BUFFER,offset,work_back,work_offset,SPRITE_WIDTH);
+
+        // move to next line in video buffer and in sprite background buffer
+        offset      += SCREEN_WIDTH;
+        work_offset += SPRITE_WIDTH;
+    }
+};
 
 /*
 
