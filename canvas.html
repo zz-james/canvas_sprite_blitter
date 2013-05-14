@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>Canvas</title>
+    <style>
+        #canvas {
+            height: 400px;
+            width: 640px;
+        }
+    </style>
 </head>
 <body style="background-color: #000;color:#fff">
 <span style="font-size: small;" id="message"></span> <br />
@@ -10,12 +16,104 @@
   <script language="javascript" src="image.js"></script>
  <!-- <script language="javascript" src="dots.js"></script> -->
 <script language="javascript">
-    var image = new Image();
-    image_load(image, 'TANKS.png');
-    image.onload = function(e) {
-        image_show_buffer(image);
+    var TANK_SPEED = 4;
+    var PI = Math.PI;
+
+    var SPRITE_WIDTH = 16;
+    var SPRITE_HEIGHT = 16;
+
+    var index; // counters
+
+    // structures
+    var tank1;  // these guys will be sprite objects
+    var tank2;
+
+    var background;  // these guys will be picture objects
+    var objects;
+
+    // ints
+    var tank1Direction = 0;
+    var tank2Direction = 0;
+    var done = 0;
+
+    // floats
+    var dx, dy, angle;
+
+    // main()
+    function main()
+    {
+        background = pictureFactory();    // now background.buffer exists
+        pictureLoad(background, "OUTPOST.png", returnToMain1 );
+    }
+
+    var returnToMain1 = function()
+    {
+        pictureShowBuffer(background);
+      //  pictureDelete(background);
+        objects = pictureFactory();
+        pictureLoad(objects, "TANKS.png", returnToMain2 );
     };
 
+    var returnToMain2 = function()
+    {
+        tank1 = spriteFactory(160, 150, 0, 0, 0, 0); // place tank1 at bottom of screen
+        // grab all 16 images from the tanks picture
+        for (index=0; index<16; index++)
+        {
+            pictureGrabBitmap(objects,tank1,index,index,0);
+        }
+
+        tank2 = spriteFactory(160, 50, 0, 0, 0, 0);  // place tank2 (enemy) in top of screen
+        // grab all 16 images from the tanks pcx picture
+        for (index=0; index<16; index++)
+        {
+            pictureGrabBitmap(objects,tank2,index,index,1);
+        }
+        // kill the picture memory and buffers now that were done
+        pictureDelete(objects);
+
+        // S E C T I O N  3 //////////////////////////////////////////////////
+
+        // point the tanks straight up
+
+        tank1.curr_frame = tank1Direction;
+        tank2.curr_frame = tank2Direction;
+
+        // scan the background under tanks on first iteration
+
+        behindSprite(tank1); // player
+        behindSprite(tank2); // enemy
+
+        // wait for exit, this is the main event loop
+
+        window.postMessage("*", "*");
+    };
+
+    window.mainLoop = function(event) {
+        event.stopPropagation();
+        console.log('boom');
+    };
+
+    window.addEventListener("message", mainLoop, true);
+    main();
+    /*
+
+     // testing
+     drawSprite(tank1);
+
+     IMAGE_DATA.data.set(CANVAS_VIEW);
+     CTX.putImageData(IMAGE_DATA, 0, 0);
+
+
+
+    behindSprite(tank1); // player
+
+    // erase the players tank
+    eraseSprite(tank1);
+
+    // draw players tank
+    drawSprite(tank1);
+    */
 </script>
 </body>
 </html>
