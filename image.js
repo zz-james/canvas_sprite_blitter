@@ -202,7 +202,6 @@ var pictureGrabBitmap = function(picture, sprite, frame, grab_x, grab_y) {
  */
 var drawSprite = function(sprite) {
 
-
     var work_sprite;
     var work_offset=0,offset,x,y;
     var data;
@@ -229,13 +228,16 @@ var drawSprite = function(sprite) {
         // move to next line in video buffer and in sprite bitmap buffer
         offset      += SCREEN_WIDTH;
         work_offset += SPRITE_WIDTH;
-
     }
 };
 
+
+/**
+ * this function scans the background behind a sprite so that when the sprite
+ * is drawn, the background isn't obliterated
+ * @param sprite
+ */
 var behindSprite = function(sprite) {
-    // this function scans the background behind a sprite so that when the sprite
-    // is drawn, the background isn't obliterated
 
     var work_back;
     var work_offset=0,offset,y;
@@ -259,14 +261,6 @@ var behindSprite = function(sprite) {
 
     } // end for y
 };
-
-
-var memcpy = function(dst, dstOffset, src, srcOffset, length) {
-    var dstU32 = new Uint32Array(dst, dstOffset, length);
-    var srcU32 = new Uint32Array(src, srcOffset, length);
-    dstU32.set(srcU32);
-};
-
 
 /**
  * this function replaces the background that was saved from where a sprite
@@ -296,15 +290,17 @@ var eraseSprite = function(sprite) {
     }
 };
 
+var memcpy = function(dst, dstOffset, src, srcOffset, length) {
+    var dstU32 = new Uint32Array(dst, dstOffset, length);
+    var srcU32 = new Uint32Array(src, srcOffset, length);
+    dstU32.set(srcU32);
+};
+
+var cls = function() {
+    CTX.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+};
+
 /*
-
-void Sprite_Delete(sprite_ptr sprite);
-
-void Behind_Sprite(sprite_ptr sprite);
-
-void Erase_Sprite(sprite_ptr sprite);
-
-void Draw_Sprite(sprite_ptr sprite);
 
 unsigned char Get_Pixel(int x,int y);
 

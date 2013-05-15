@@ -82,7 +82,7 @@
         // scan the background under tanks on first iteration
 
         behindSprite(tank1); // player
-        behindSprite(tank2); // enemy
+        // behindSprite(tank2); // enemy
 
         // wait for exit, this is the main event loop
 
@@ -91,14 +91,14 @@
 
     window.mainLoop = function(event) {
         event.stopPropagation();
-        console.log('boom');
+       // console.log('boom');
 
         // S E C T I O N  4 //////////////////////////////////////////////////
 
         // erase the players tank
-        eraseSprite(tank1);
+        // eraseSprite(tank1);
         // erase the enemy tank
-        eraseSprite(tank2);
+        // eraseSprite(tank2);
 
         // S E C T I O N  5 //////////////////////////////////////////////////
 
@@ -129,8 +129,8 @@
                 angle = (90+360-22.5*tank1Direction);
 
                 // compute factors based on angle and speed
-                dx = TANK_SPEED * cos(PI*angle/180);
-                dy = TANK_SPEED * sin(PI*angle/180);
+                dx = TANK_SPEED * Math.cos(PI*angle/180);
+                dy = TANK_SPEED * Math.sin(PI*angle/180);
             }
 
             if(pressed[40]) { // move backward
@@ -138,8 +138,8 @@
 
                 // compute factors based on angle and speed
 
-                dx = TANK_SPEED * cos(PI*angle/180);
-                dy = TANK_SPEED * sin(PI*angle/180);
+                dx = TANK_SPEED * Math.cos(PI*angle/180);
+                dy = TANK_SPEED * Math.sin(PI*angle/180);
             }
 
 
@@ -163,7 +163,7 @@
         } // end if
 
 // S E C T I O N  7 //////////////////////////////////////////////////
-
+        /*
         // now move the enemy tank
 
         // test if it's time to turn
@@ -201,7 +201,7 @@
             tank2.curr_frame = tank2Direction;
 
         } // end if
-
+        */
         // S E C T I O N  8 //////////////////////////////////////////////////
         // compute angle in radians
 
@@ -238,20 +238,20 @@
         behindSprite(tank1);
 
         // scan background under emeny tank
-        behindSprite(tank2);
+        //behindSprite(tank2);
 
         // draw players tank
         drawSprite(tank1);
 
         // draw enemy tank
-        drawSprite(tank2);
+        //drawSprite(tank2);
 
         IMAGE_DATA.data.set(CANVAS_VIEW);
         CTX.putImageData(IMAGE_DATA, 0, 0);
 
         /* end main loop body */
         if(!done)
-        { window.postMessage("*", "*"); }
+        { /*window.postMessage("*", "*");*/ }
         else
         {/* exit loop */ console.log("done");}
 

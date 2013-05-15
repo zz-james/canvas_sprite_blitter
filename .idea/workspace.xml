@@ -25,7 +25,26 @@
     <favorites_list name="canvas_sprite_blitter" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/canvas.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="249" column="11" selection-start="6910" selection-end="6913" vertical-scroll-proportion="-8.384615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/image.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="300" column="0" selection-start="8281" selection-end="8281" vertical-scroll-proportion="0.6450116">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -39,8 +58,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/buffer.js" />
-        <option value="$PROJECT_DIR$/image.js" />
         <option value="$PROJECT_DIR$/canvas.html" />
+        <option value="$PROJECT_DIR$/image.js" />
       </list>
     </option>
   </component>
@@ -76,6 +95,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -92,16 +121,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="canvas_sprite_blitter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -143,14 +162,17 @@
       <created>1368547069617</created>
       <updated>1368547069617</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="almost!!">
+      <created>1368567240004</created>
+      <updated>1368567240004</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1040" height="616" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -165,6 +187,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -207,7 +230,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on main loop now. some confusion with the typed arrays and the typedarray.buffer property, which means the code could be tidier,  maybe." />
+    <option name="LAST_COMMIT_MESSAGE" value="almost!!" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -222,6 +245,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="working on main loop now. some confusion with the typed arrays and the typedarray.buffer property, which means the code could be tidier,  maybe." />
+    <MESSAGE value="almost!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -229,35 +253,29 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/starfield.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="0" selection-start="5135" selection-end="5209" vertical-scroll-proportion="5.0487237">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="29" selection-start="5990" selection-end="5990" vertical-scroll-proportion="0.5802469">
-          <folding />
-        </state>
+        <state line="191" column="0" selection-start="5135" selection-end="5209" vertical-scroll-proportion="5.0487237" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dots.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="537" selection-end="678" vertical-scroll-proportion="0.48723897">
-          <folding />
-        </state>
+        <state line="22" column="0" selection-start="537" selection-end="678" vertical-scroll-proportion="0.48723897" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buffer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="488" selection-end="500" vertical-scroll-proportion="0.3549884">
+        <state line="17" column="13" selection-start="488" selection-end="500" vertical-scroll-proportion="0.3549884" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="11" selection-start="6910" selection-end="6913" vertical-scroll-proportion="-8.384615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="0" selection-start="3184" selection-end="3261" vertical-scroll-proportion="0.60556847">
+        <state line="300" column="0" selection-start="8281" selection-end="8281" vertical-scroll-proportion="0.6450116">
           <folding />
         </state>
       </provider>
