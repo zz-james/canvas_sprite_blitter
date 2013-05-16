@@ -26,19 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="canvas.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/canvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="249" column="11" selection-start="6910" selection-end="6913" vertical-scroll-proportion="-8.384615">
+            <state line="12" column="74" selection-start="293" selection-end="293" vertical-scroll-proportion="0.5037037">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="image.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="image.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="300" column="0" selection-start="8281" selection-end="8281" vertical-scroll-proportion="0.6450116">
+            <state line="260" column="40" selection-start="7213" selection-end="7213" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -58,8 +58,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/buffer.js" />
-        <option value="$PROJECT_DIR$/canvas.html" />
         <option value="$PROJECT_DIR$/image.js" />
+        <option value="$PROJECT_DIR$/canvas.html" />
       </list>
     </option>
   </component>
@@ -95,16 +95,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -125,17 +115,27 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.sourceCode" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
     <property name="JavaScriptPreferStrict" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -166,7 +166,11 @@
       <created>1368567240004</created>
       <updated>1368567240004</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ddebugging in progress">
+      <created>1368653688126</created>
+      <updated>1368653688126</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -230,7 +234,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="ddebugging in progress" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -246,6 +250,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="working on main loop now. some confusion with the typed arrays and the typedarray.buffer property, which means the code could be tidier,  maybe." />
     <MESSAGE value="almost!!" />
+    <MESSAGE value="ddebugging in progress" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -266,16 +271,16 @@
         <state line="17" column="13" selection-start="488" selection-end="500" vertical-scroll-proportion="0.3549884" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canvas.html">
+    <entry file="file://$PROJECT_DIR$/image.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="11" selection-start="6910" selection-end="6913" vertical-scroll-proportion="-8.384615">
+        <state line="260" column="40" selection-start="7213" selection-end="7213" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image.js">
+    <entry file="file://$PROJECT_DIR$/canvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="0" selection-start="8281" selection-end="8281" vertical-scroll-proportion="0.6450116">
+        <state line="12" column="74" selection-start="293" selection-end="293" vertical-scroll-proportion="0.5037037">
           <folding />
         </state>
       </provider>

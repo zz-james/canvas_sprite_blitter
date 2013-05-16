@@ -246,20 +246,23 @@ var behindSprite = function(sprite) {
     work_back = sprite.background.buffer;
 
     // compute offset of background in video buffer
-    offset = (sprite.y * 320) + sprite.x;
+    offset = (sprite.y * 320 * 4) + sprite.x * 4;
+    var sprite_byte_width = SPRITE_WIDTH * 4;
+    var screen_byte_width = SCREEN_WIDTH * 4;
 
     for (y=0; y<SPRITE_HEIGHT; y++)
     {
         // copy the next row out off screen buffer into sprite background buffer
 
-        memcpy(work_back, work_offset, VIDEO_BUFFER, offset ,SPRITE_WIDTH);
+        memcpy(work_back, work_offset, VIDEO_BUFFER, offset , sprite_byte_width);
 
         // move to next line in video buffer and in sprite background buffer
 
-        offset      += SCREEN_WIDTH;
-        work_offset += SPRITE_WIDTH;
+        offset      += screen_byte_width;
+        work_offset += sprite_byte_width;
 
     } // end for y
+    var a = true;
 };
 
 /**
@@ -277,22 +280,24 @@ var eraseSprite = function(sprite) {
     work_back = sprite.background.buffer;
 
     // compute offset of background in video buffer
-    offset = (sprite.y * 320) + sprite.x;
+    offset = (sprite.y * 320 * 4) + sprite.x * 4;
+    var sprite_byte_width = SPRITE_WIDTH * 4;
+    var screen_byte_width = SCREEN_WIDTH * 4;
 
     for (y=0; y<SPRITE_HEIGHT; y++)
     {
         // copy the next row out off screen buffer into sprite background buffer
-        memcpy(VIDEO_BUFFER,offset,work_back,work_offset,SPRITE_WIDTH);
+        memcpy(VIDEO_BUFFER,offset,work_back,work_offset,sprite_byte_width);
 
         // move to next line in video buffer and in sprite background buffer
-        offset      += SCREEN_WIDTH;
-        work_offset += SPRITE_WIDTH;
+        offset      += screen_byte_width;
+        work_offset += sprite_byte_width;
     }
 };
 
 var memcpy = function(dst, dstOffset, src, srcOffset, length) {
-    var dstU32 = new Uint32Array(dst, dstOffset, length);
-    var srcU32 = new Uint32Array(src, srcOffset, length);
+    var dstU32 = new Uint8Array(dst, dstOffset, length);
+    var srcU32 = new Uint8Array(src, srcOffset, length);
     dstU32.set(srcU32);
 };
 

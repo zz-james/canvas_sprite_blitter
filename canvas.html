@@ -10,7 +10,7 @@
     </style>
 </head>
 <body style="background-color: #000;color:#fff">
-<span style="font-size: small;" id="message"></span> <br />
+<span id="message">*** Arrow keys to drive the blue tank *** Q to quit ***</span> <br />
   <canvas id="canvas" height="200" width="320"></canvas>
   <script language="javascript" src="buffer.js"></script>
   <script language="javascript" src="image.js"></script>
@@ -82,7 +82,7 @@
         // scan the background under tanks on first iteration
 
         behindSprite(tank1); // player
-        // behindSprite(tank2); // enemy
+        behindSprite(tank2); // enemy
 
         // wait for exit, this is the main event loop
 
@@ -96,9 +96,9 @@
         // S E C T I O N  4 //////////////////////////////////////////////////
 
         // erase the players tank
-        // eraseSprite(tank1);
+        eraseSprite(tank1);
         // erase the enemy tank
-        // eraseSprite(tank2);
+        eraseSprite(tank2);
 
         // S E C T I O N  5 //////////////////////////////////////////////////
 
@@ -111,13 +111,13 @@
             var dx= 0, dy=0;
 
             // test what key was pressed
-            if(pressed[37]){ // rotate right
+            if(pressed[39]){ // rotate right
                 // change direction of tank, make sure to wrap around
                 if (++tank1Direction > 15)
                     tank1Direction=0;
             }
 
-            if(pressed[39]) { // rotate left
+            if(pressed[37]) { // rotate left
                 // change direction of tank, make sure to wrap around
                 if (--tank1Direction < 0)
                     tank1Direction=15;
@@ -157,13 +157,26 @@
             tank1.y-=((dy+.5)<<0);
 
             // test if player bumped into edge, if so push him back
+            if (tank1.x > (320-SPRITE_WIDTH) )
+            {tank1.x = 0;}
+            else
+            if (tank1.x < 0 )
+            {tank1.x = 319-SPRITE_WIDTH;}
+
+            if (tank1.y > (200-SPRITE_HEIGHT) )
+            {tank1.y = 0;}
+            else
+            if (tank1.y < 0 )
+            {tank1.y = 199-SPRITE_HEIGHT;}
+
+
             // set the frame based on new direction
             tank1.curr_frame = tank1Direction;
 
         } // end if
 
 // S E C T I O N  7 //////////////////////////////////////////////////
-        /*
+
         // now move the enemy tank
 
         // test if it's time to turn
@@ -201,7 +214,7 @@
             tank2.curr_frame = tank2Direction;
 
         } // end if
-        */
+
         // S E C T I O N  8 //////////////////////////////////////////////////
         // compute angle in radians
 
@@ -238,20 +251,20 @@
         behindSprite(tank1);
 
         // scan background under emeny tank
-        //behindSprite(tank2);
+        behindSprite(tank2);
 
         // draw players tank
         drawSprite(tank1);
 
         // draw enemy tank
-        //drawSprite(tank2);
+        drawSprite(tank2);
 
         IMAGE_DATA.data.set(CANVAS_VIEW);
         CTX.putImageData(IMAGE_DATA, 0, 0);
 
         /* end main loop body */
         if(!done)
-        { /*window.postMessage("*", "*");*/ }
+        { window.postMessage("*", "*"); }
         else
         {/* exit loop */ console.log("done");}
 
