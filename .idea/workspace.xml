@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/attank.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas.html" afterPath="$PROJECT_DIR$/canvas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image.js" afterPath="$PROJECT_DIR$/image.js" />
     </list>
     <ignored path="canvas_sprite_blitter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,16 +29,7 @@
       <file leaf-file-name="canvas.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/canvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="74" selection-start="293" selection-end="293" vertical-scroll-proportion="0.5037037">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="260" column="40" selection-start="7213" selection-end="7213" vertical-scroll-proportion="0.0">
+            <state line="14" column="2" selection-start="367" selection-end="367" vertical-scroll-proportion="0.5382716">
               <folding />
             </state>
           </provider>
@@ -59,6 +50,7 @@
       <list>
         <option value="$PROJECT_DIR$/buffer.js" />
         <option value="$PROJECT_DIR$/image.js" />
+        <option value="$PROJECT_DIR$/attank.js" />
         <option value="$PROJECT_DIR$/canvas.html" />
       </list>
     </option>
@@ -95,6 +87,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -115,27 +117,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.sourceCode" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
     <property name="JavaScriptPreferStrict" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -170,11 +162,15 @@
       <created>1368653688126</created>
       <updated>1368653688126</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="yes!  just have to watch for those byte/pixel changes! * 4 on some loops for the mem copy!!!">
+      <created>1368738109415</created>
+      <updated>1368738109415</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="616" extended-state="6" />
+    <frame x="-8" y="-8" width="1040" height="616" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -234,7 +230,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="ddebugging in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="yes!  just have to watch for those byte/pixel changes! * 4 on some loops for the mem copy!!!" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -251,6 +247,7 @@
     <MESSAGE value="working on main loop now. some confusion with the typed arrays and the typedarray.buffer property, which means the code could be tidier,  maybe." />
     <MESSAGE value="almost!!" />
     <MESSAGE value="ddebugging in progress" />
+    <MESSAGE value="yes!  just have to watch for those byte/pixel changes! * 4 on some loops for the mem copy!!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -273,14 +270,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/image.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="260" column="40" selection-start="7213" selection-end="7213" vertical-scroll-proportion="0.0">
+        <state line="213" column="4" selection-start="5827" selection-end="5827" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="281" column="3" selection-start="6546" selection-end="6546" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/canvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="74" selection-start="293" selection-end="293" vertical-scroll-proportion="0.5037037">
+        <state line="14" column="2" selection-start="367" selection-end="367" vertical-scroll-proportion="0.5382716">
           <folding />
         </state>
       </provider>
