@@ -6,45 +6,12 @@
  */
 "use strict";
 
-
-
-
-
-
-
-// GRAPH4.H
-
-// D E F I N E S  ////////////////////////////////////////////////////////////
+// G L O B A L S  ////////////////////////////////////////////////////////////
 
 var MAX_SPRITE_FRAMES = 24;
 var SPRITE_DEAD = 0;
 var SPRITE_ALIVE = 1;
 var SPRITE_DYING = 2;
-
-// S T R U C T U R E S ///////////////////////////////////////////////////////
-
-/*
-typedef struct sprite_typ
-{
-    int x,y;            // position of sprite
-    int x_old,y_old;    // old position of sprite
-    int width,height;   // dimensions of sprite in pixels
-    int anim_clock;     // the animation clock
-    int anim_speed;     // the animation speed
-    int motion_speed;   // the motion speed
-    int motion_clock;   // the motion clock
-
-    char far *frames[MAX_SPRITE_FRAMES]; // array of pointers to the images
-    int curr_frame;                      // current frame being displayed
-    int num_frames;                      // total number of frames
-    int state;                           // state of sprite, alive, dead...
-    char far *background;                // whats under the sprite
-    void far *extra_data;                // an auxialliary pointer to more
-    // data if needed
-} sprite, *sprite_ptr;
-*/
-
-// G L O B A L S  ////////////////////////////////////////////////////////////
 
 var SPRITE_WIDTH;
 var SPRITE_HEIGHT;
@@ -62,7 +29,9 @@ OFFSCREEN_CANVAS.height = SCREEN_HEIGHT;
 
 /**
  * this function allocates the buffer region needed to load a pcx file
- * wrapped in an object (which is probably unneccesary!!
+ * and returns an object with 2 views, an 8 bit view for canvas and
+ * a 32 bit view for pixel manipulation. the buffer is the same dimensions
+ * as the canvas area.
  */
 var pictureFactory = function() {
     var buffer = new ArrayBuffer(SCREEN_WIDTH * SCREEN_HEIGHT * 4);
@@ -75,15 +44,17 @@ var pictureFactory = function() {
 
 
 /**
- * this function loads a png file into a picture structure, the actual image
- * data for the png file is decompressed and expanded into a secondary buffer
- * within the picture structure, the separate images can be grabbed from this
- * buffer later.
- * remember image loading is asynch and so we need a handler & to jump back in to main.
+ * this function loads a png file into a picture object, the actual image
+ * data for the png file is stored in a secondary buffer within the picture structure,
+ * the separate images can be grabbed from this buffer later.
+ * remember image loading is asynch and so we need a handler &
+ * a callback to jump back in to main.
  *
- * @param picture
- * @param filename
- * @param callback
+ * uses global DOM_IMAGE_OBJECT which is a shared DOM object for loading images
+ *
+ * @param picture - picture object created with pictureFactory method
+ * @param filename - filename of image obs.
+ * @param callback - function object to jump back to when image loaded
  */
 var pictureLoad = function( picture, filename, callback ) {
     DOM_IMAGE_OBJECT.onload = function(e) {
@@ -95,6 +66,14 @@ var pictureLoad = function( picture, filename, callback ) {
     picture.filename = filename;
 };
 
+/**
+ * this function works with pictureLoad to put the image data into the
+ * picture object buffer
+ *
+ * uses the global OFFSCREEN_CONTEXT which is a shared DOM object
+ *
+ * @param picture - picture object created with pictureFactory
+ */
 var putImageDataInBuffer = function(picture) {
     OFFSCREEN_CONTEXT.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     OFFSCREEN_CONTEXT.drawImage(DOM_IMAGE_OBJECT,0,0);
@@ -102,16 +81,23 @@ var putImageDataInBuffer = function(picture) {
     picture.cnv_view.set(imageData.data); // data is a Uint8ClampedArray
 };
 
+/**
+ * this just a function to display whatever is in the buffer of a
+ * picture object not usually used in a game
+ * @param picture
+ */
 var pictureShowBuffer = function(picture) {
-
     CANVAS_VIEW.set(picture.cnv_view);
-
     IMAGE_DATA.data.set(CANVAS_VIEW);
     CTX.putImageData(IMAGE_DATA, 0, 0);
-
-
 };
 
+/**
+ * clear the picture buffer of a picture object
+ * todo: probs can just clear the buffer and maybe
+ * this could be used again in a object pool
+ * @param picture
+ */
 var pictureDelete = function(picture) {
     picture.buffer = null;
 };
@@ -153,14 +139,14 @@ var spriteFactory = function(x,y,ac,as,mc,ms)
 
 
 /**
- * This function will grap a bitmap from the pcx frame buffer. it uses the
+ * This function will grap a bitmap from the picture object buffer. it uses the
  * convention that the 320x200 pixel matrix is sub divided into a smaller
- * matrix of nxn adjacent squares
- * @param picture
- * @param sprite
- * @param frame
- * @param grab_x
- * @param grab_y
+ * matrix of nxn adjacent squares of size SPRITE_HEIGHT X SPRITE_WIDTH
+ * @param picture - picture object
+ * @param sprite - sprite object
+ * @param frame - index of 'frames' in the sprite object
+ * @param grab_x - x point in pixels to start grabbing from the picture buffer
+ * @param grab_y - y point in pixels to start grabbing from the picture buffer
  */
 var pictureGrabBitmap = function(picture, sprite, frame, grab_x, grab_y) {
 
@@ -186,7 +172,6 @@ var pictureGrabBitmap = function(picture, sprite, frame, grab_x, grab_y) {
         {
             // get the next byte of current row and place into next position in
             // sprite frame data buffer
-
             sprite_data[y*SPRITE_WIDTH + x] = picture.rgb_view[y_off + x_off + x];
         }
         // move to next line of picture buffer
@@ -198,7 +183,7 @@ var pictureGrabBitmap = function(picture, sprite, frame, grab_x, grab_y) {
 
 /**
  * this function draws a sprite on the screen row by row very quickly
- * @param sprite
+ * @param sprite - sprite object to draw - the frame drawn depends on the sprite.curr_frame value
  */
 var drawSprite = function(sprite) {
 
@@ -295,15 +280,7 @@ var eraseSprite = function(sprite) {
     }
 };
 
-var memcpy = function(dst, dstOffset, src, srcOffset, length) {
-    var dstU32 = new Uint8Array(dst, dstOffset, length);
-    var srcU32 = new Uint8Array(src, srcOffset, length);
-    dstU32.set(srcU32);
-};
 
-var cls = function() {
-    CTX.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-};
 
 /*
 
@@ -313,24 +290,3 @@ int Sprite_Collide(sprite_ptr sprite_1, sprite_ptr sprite_2);
 
 
 /* all canvas pixel data is a uint8clamped array */
-
-
-// to get an images data you must
-// use drawimage to put it onto a canvas
-// then use getImageData to get the pixels.
-
-
-
-
-/**
- * this function grabs a bit map from the image frame buffer. it
- * uses the convention that the 320x200 pixel matrix is subdivided
- * into a smaller matrix of nxn adjacent squares
- */
-
-/*
-var image_grab_bitmap = function(image, sprite, frame, grab_x, grab_y) {
-    var x_off, y_off, x, y;
-    // var sprite_data -- typed array?
-};
-    */

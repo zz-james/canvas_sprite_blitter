@@ -6,6 +6,12 @@
  */
 "use strict";
 
+/**
+ * a lot of global shit here that doesn't need to be
+ * but haven't quite figured it out yet trying to keep
+ * look up chain short as possible
+ */
+
 var TANK_SPEED = 4;
 var PI = Math.PI;
 
@@ -21,6 +27,7 @@ var tank2;
 var background;  // these guys will be picture objects
 var objects;
 
+// type information, useful if decide to port to LLJS or something.
 // ints
 var tank1Direction = 0;
 var tank2Direction = 0;
@@ -29,56 +36,67 @@ var done = 0;
 // floats
 var dx, dy, angle;
 
-// main()
+/**
+ * here's our start point.
+ */
 function main()
 {
+    // call asynch function to load background
     background = pictureFactory();    // now background.buffer exists
     pictureLoad(background, "OUTPOST.png", returnToMain1 );
 }
 
 var returnToMain1 = function()
 {
+    // show background and call asynch function to load objects image file (tank images)
     pictureShowBuffer(background);
-    //  pictureDelete(background);
+    pictureDelete(background);
     objects = pictureFactory();
     pictureLoad(objects, "TANKS.png", returnToMain2 );
 };
 
 var returnToMain2 = function()
 {
+    // instance the player sprite object
     tank1 = spriteFactory(160, 150, 0, 0, 0, 0); // place tank1 at bottom of screen
+
     // grab all 16 images from the tanks picture
     for (index=0; index<16; index++)
     {
         pictureGrabBitmap(objects,tank1,index,index,0);
     }
 
+    // instance the enemy sprite object
     tank2 = spriteFactory(160, 50, 0, 0, 0, 0);  // place tank2 (enemy) in top of screen
+
     // grab all 16 images from the tanks pcx picture
     for (index=0; index<16; index++)
     {
         pictureGrabBitmap(objects,tank2,index,index,1);
     }
+
     // kill the picture memory and buffers now that were done
     pictureDelete(objects);
 
     // S E C T I O N  3 //////////////////////////////////////////////////
 
     // point the tanks straight up
-
     tank1.curr_frame = tank1Direction;
     tank2.curr_frame = tank2Direction;
 
     // scan the background under tanks on first iteration
-
     behindSprite(tank1); // player
     behindSprite(tank2); // enemy
 
-    // wait for exit, this is the main event loop
-
+    // call main event loop
     window.postMessage("*", "*");
 };
 
+
+/**
+ * this is the game loop
+ * @param event
+ */
 window.mainLoop = function(event) {
     event.stopPropagation();
     // console.log('boom');
@@ -221,7 +239,7 @@ window.mainLoop = function(event) {
 
     // S E C T I O N  9 //////////////////////////////////////////////////
 
-    // test if enemy has hit an edge, if so warp to other side
+    // test if enemy has hit an edge, if so wrap to other side
 
     if (tank2.x > (320-SPRITE_WIDTH) )
     {tank2.x = 0;}
@@ -249,6 +267,7 @@ window.mainLoop = function(event) {
     // draw enemy tank
     drawSprite(tank2);
 
+    // update canvas buffer and write to screen
     IMAGE_DATA.data.set(CANVAS_VIEW);
     CTX.putImageData(IMAGE_DATA, 0, 0);
 
@@ -262,21 +281,3 @@ window.mainLoop = function(event) {
 
 window.addEventListener("message", mainLoop, true);
 main();
-/*
-
- // testing
- drawSprite(tank1);
-
- IMAGE_DATA.data.set(CANVAS_VIEW);
- CTX.putImageData(IMAGE_DATA, 0, 0);
-
-
-
- behindSprite(tank1); // player
-
- // erase the players tank
- eraseSprite(tank1);
-
- // draw players tank
- drawSprite(tank1);
- */
