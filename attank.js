@@ -15,8 +15,9 @@
 var TANK_SPEED = 4;
 var PI = Math.PI;
 
-var SPRITE_WIDTH = 16;
-var SPRITE_HEIGHT = 16;
+// declared in image.js
+SPRITE_WIDTH = 16;
+SPRITE_HEIGHT = 16;
 
 var index; // counters
 

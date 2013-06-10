@@ -69,9 +69,9 @@ if (LITTLE_ENDIAN) {
 /**
  * this is a utility function - we using it to blit image data
  * @param dst
- * @param dstOffset
+ * @param dstOffset in bytes!
  * @param src
- * @param srcOffset
+ * @param srcOffset in bytes!
  * @param length in bytes!
  */
 var memcpy = function(dst, dstOffset, src, srcOffset, length) {

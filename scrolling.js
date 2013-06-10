@@ -31,9 +31,11 @@ var showViewPort = function(buffer, pos) {
         screen_off = (y * SCREEN_WIDTH * 4);
 
         // move the data
-        memcpy(VIDEO_BUFFER, screen_off, buffer, scroll_off, SCREEN_WIDTH * 4);
+        memcpy(VIDEO_BUFFER, screen_off, buffer, scroll_off, SCREEN_WIDTH);
     }
 };
+
+
 
 var plotPixelScroll = function(x,y,color) {
     // this function plots pixels into the scroll buffer
@@ -81,8 +83,7 @@ var main = function() {
 
     // show the initial view
     showViewPort(SCROLL_BUFFER, sx);
-
-    // call main event loop
+    //temp
     window.postMessage("*", "*");
 };
 

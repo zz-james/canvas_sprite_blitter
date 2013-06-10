@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scrolling.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/robopunk.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/attank.js" afterPath="$PROJECT_DIR$/attank.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buffer.js" afterPath="$PROJECT_DIR$/buffer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas.html" afterPath="$PROJECT_DIR$/canvas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image.js" afterPath="$PROJECT_DIR$/image.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scrolling.js" afterPath="$PROJECT_DIR$/scrolling.js" />
     </list>
     <ignored path="canvas_sprite_blitter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,28 +29,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="robopunk.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/robopunk.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="35" selection-start="229" selection-end="229" vertical-scroll-proportion="0.28337237">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/canvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="9" selection-start="95" selection-end="95" vertical-scroll-proportion="-3.8076923">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrolling.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scrolling.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="36" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.47129187">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="buffer.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/buffer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="26" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0">
+            <state line="9" column="64" selection-start="161" selection-end="161" vertical-scroll-proportion="-5.8846154">
               <folding />
             </state>
           </provider>
@@ -69,19 +60,20 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/attank.js" />
         <option value="$PROJECT_DIR$/image.js" />
-        <option value="$PROJECT_DIR$/buffer.js" />
-        <option value="$PROJECT_DIR$/canvas.html" />
         <option value="$PROJECT_DIR$/scrolling.js" />
+        <option value="$PROJECT_DIR$/buffer.js" />
+        <option value="$PROJECT_DIR$/attank.js" />
+        <option value="$PROJECT_DIR$/canvas.html" />
+        <option value="$PROJECT_DIR$/robopunk.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1040" />
-    <option name="height" value="616" />
+    <option name="width" value="1036" />
+    <option name="height" value="612" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -153,7 +145,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node JS" working-dir="$PROJECT_DIR$">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node JS" working-dir="$PROJECT_DIR$" coffeescript-run="false">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -196,18 +188,25 @@
       <created>1370362814192</created>
       <updated>1370362814192</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="this is the scrolling demo">
+      <created>1370382082447</created>
+      <updated>1370382082447</updated>
+    </task>
+    <task id="LOCAL-00008" summary="dont need request anim frame for now">
+      <created>1370382174322</created>
+      <updated>1370382174322</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1040" height="616" extended-state="0" />
+    <frame x="-8" y="-8" width="1036" height="612" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1988012" sideWeight="0.67105263" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21364093" sideWeight="0.67105263" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -218,6 +217,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -260,7 +260,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok, seperated game logic into attank.js file. gonna try rationalising the other files into something more reusable." />
+    <option name="LAST_COMMIT_MESSAGE" value="dont need request anim frame for now" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -279,6 +279,8 @@
     <MESSAGE value="ddebugging in progress" />
     <MESSAGE value="yes!  just have to watch for those byte/pixel changes! * 4 on some loops for the mem copy!!!" />
     <MESSAGE value="ok, seperated game logic into attank.js file. gonna try rationalising the other files into something more reusable." />
+    <MESSAGE value="this is the scrolling demo" />
+    <MESSAGE value="dont need request anim frame for now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -289,86 +291,81 @@
         <state line="22" column="0" selection-start="537" selection-end="678" vertical-scroll-proportion="0.48723897" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.6566125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inheritence.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blitter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.118329465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="282" column="0" selection-start="8384" selection-end="8384" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.118329465" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/starfield.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="47" selection-start="3338" selection-end="3348" vertical-scroll-proportion="0.68445474">
-          <folding />
-        </state>
+        <state line="113" column="47" selection-start="3338" selection-end="3348" vertical-scroll-proportion="0.68445474" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../smorgasbord/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../smorgasbord/lib/lang/browser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="482" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="482" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../smorgasbord/lib/smorgasbord/smorgasbord.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="50" selection-start="2070" selection-end="2114" vertical-scroll-proportion="0.47331786">
+        <state line="71" column="50" selection-start="2070" selection-end="2114" vertical-scroll-proportion="0.47331786" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrolling.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="69" selection-start="2110" selection-end="2175" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canvas.html">
+    <entry file="file://$PROJECT_DIR$/sprite.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="9" selection-start="95" selection-end="95" vertical-scroll-proportion="-3.8076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/attank.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="281" column="0" selection-start="6781" selection-end="6832" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buffer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="26" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0">
+        <state line="45" column="12" selection-start="1795" selection-end="1803" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scrolling.js">
+    <entry file="file://$PROJECT_DIR$/image.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="36" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.47129187">
+        <state line="86" column="37" selection-start="2747" selection-end="2747" vertical-scroll-proportion="-4.0163937">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="282" column="0" selection-start="6797" selection-end="6856" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="64" selection-start="161" selection-end="161" vertical-scroll-proportion="-5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robopunk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="229" selection-end="229" vertical-scroll-proportion="0.28337237">
           <folding />
         </state>
       </provider>
