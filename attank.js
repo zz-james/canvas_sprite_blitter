@@ -4,7 +4,7 @@
  * Date: 04/06/13
  * Time: 17:12
  */
-"use strict";
+"use strict";     //what
 
 /**
  * a lot of global shit here that doesn't need to be
@@ -64,7 +64,7 @@ var returnToMain2 = function()
     // grab all 16 images from the tanks picture
     for (index=0; index<16; index++)
     {
-        pictureGrabBitmap(objects,tank1,index,index,0);
+        spriteGrabBitmap(objects,tank1,index,index,0);
     }
 
     // instance the enemy sprite object
@@ -73,7 +73,7 @@ var returnToMain2 = function()
     // grab all 16 images from the tanks pcx picture
     for (index=0; index<16; index++)
     {
-        pictureGrabBitmap(objects,tank2,index,index,1);
+        spriteGrabBitmap(objects,tank2,index,index,1);
     }
 
     // kill the picture memory and buffers now that were done

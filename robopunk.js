@@ -168,20 +168,20 @@ var returnToMain1 = function()
     back_cells = spriteFactory(0,0,0,0,0,0);
 
     // extract animation cells for robopunk
-    pictureGrabBitmap(imagery,robopunk,0,3,0);
-    pictureGrabBitmap(imagery,robopunk,1,5,0);
-    pictureGrabBitmap(imagery,robopunk,2,4,0);
-    pictureGrabBitmap(imagery,robopunk,3,5,0);
-    pictureGrabBitmap(imagery,robopunk,4,6,0);
-    pictureGrabBitmap(imagery,robopunk,5,1,0);
-    pictureGrabBitmap(imagery,robopunk,6,2,0);
-    pictureGrabBitmap(imagery,robopunk,7,1,0);
-    pictureGrabBitmap(imagery,robopunk,8,0,0);
+    spriteGrabBitmap(imagery,robopunk,0,3,0);
+    spriteGrabBitmap(imagery,robopunk,1,5,0);
+    spriteGrabBitmap(imagery,robopunk,2,4,0);
+    spriteGrabBitmap(imagery,robopunk,3,5,0);
+    spriteGrabBitmap(imagery,robopunk,4,6,0);
+    spriteGrabBitmap(imagery,robopunk,5,1,0);
+    spriteGrabBitmap(imagery,robopunk,6,2,0);
+    spriteGrabBitmap(imagery,robopunk,7,1,0);
+    spriteGrabBitmap(imagery,robopunk,8,0,0);
 
     // extract background cells
     for (index=0; index<8; index++)
     {
-        pictureGrabBitmap(imagery,back_cells,index,index,1);
+        spriteGrabBitmap(imagery,back_cells,index,index,1);
     } // end for index
 
     // done with pcx file so obliterate it
