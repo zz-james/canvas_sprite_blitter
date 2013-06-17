@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tile_scrolling.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/attank.js" afterPath="$PROJECT_DIR$/attank.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas.html" afterPath="$PROJECT_DIR$/canvas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image.js" afterPath="$PROJECT_DIR$/image.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robopunk.js" afterPath="$PROJECT_DIR$/robopunk.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sprite.js" afterPath="$PROJECT_DIR$/sprite.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buffer.js" afterPath="$PROJECT_DIR$/buffer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tile.js" afterPath="$PROJECT_DIR$/tile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tile_scrolling.js" afterPath="$PROJECT_DIR$/tile_scrolling.js" />
     </list>
     <ignored path="canvas_sprite_blitter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +30,7 @@
       <file leaf-file-name="tile.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="59" selection-start="4877" selection-end="4877" vertical-scroll-proportion="0.5933014">
+            <state line="140" column="26" selection-start="4124" selection-end="4124" vertical-scroll-proportion="0.040669855">
               <folding />
             </state>
           </provider>
@@ -44,7 +39,7 @@
       <file leaf-file-name="tile_scrolling.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tile_scrolling.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="4" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
+            <state line="35" column="4" selection-start="1477" selection-end="1477" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -54,6 +49,24 @@
         <entry file="file://$PROJECT_DIR$/canvas.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="20" column="51" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buffer.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/buffer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="18" selection-start="2965" selection-end="2979" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="0" selection-start="2671" selection-end="2787" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -73,13 +86,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/scrolling.js" />
-        <option value="$PROJECT_DIR$/buffer.js" />
         <option value="$PROJECT_DIR$/scrolling2.js" />
         <option value="$PROJECT_DIR$/image.js" />
         <option value="$PROJECT_DIR$/attank.js" />
         <option value="$PROJECT_DIR$/robopunk.js" />
         <option value="$PROJECT_DIR$/sprite.js" />
         <option value="$PROJECT_DIR$/canvas.html" />
+        <option value="$PROJECT_DIR$/buffer.js" />
         <option value="$PROJECT_DIR$/tile_scrolling.js" />
         <option value="$PROJECT_DIR$/tile.js" />
       </list>
@@ -105,7 +118,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -116,45 +129,14 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas_sprite_blitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas_sprite_blitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas_sprite_blitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.settings.ide.settings.web.browsers" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../smorgasbord/lib/smorgasbord" />
     <property name="JavaScriptPreferStrict" value="true" />
@@ -247,7 +229,11 @@
       <created>1371063282465</created>
       <updated>1371063282465</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="not working but getting closer">
+      <created>1371416468571</created>
+      <updated>1371416468571</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -257,7 +243,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25774226" sideWeight="0.3618421" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25774226" sideWeight="0.3618421" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -311,7 +297,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrap around bit jumpy kind pointless but leads to other new things" />
+    <option name="LAST_COMMIT_MESSAGE" value="not working but getting closer" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -334,6 +320,7 @@
     <MESSAGE value="dont need request anim frame for now" />
     <MESSAGE value="I'm shocked that this even works." />
     <MESSAGE value="wrap around bit jumpy kind pointless but leads to other new things" />
+    <MESSAGE value="not working but getting closer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -374,11 +361,6 @@
         <state line="33" column="7" selection-start="0" selection-end="2989" vertical-scroll-proportion="0.48803827" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="184" selection-end="184" vertical-scroll-proportion="-2.5452435" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sprite.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="20" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.10047847" />
@@ -389,36 +371,43 @@
         <state line="75" column="14" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.10672854" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buffer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="16" selection-start="1225" selection-end="1237" vertical-scroll-proportion="0.26794258" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/robopunk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="3080" selection-end="3376" vertical-scroll-proportion="0.4338747" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ROBOPUNK.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tile_scrolling.js">
+    <entry file="file://$PROJECT_DIR$/robopunk.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="4" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="51" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0" />
+        <state line="344" column="0" selection-start="9953" selection-end="10048" vertical-scroll-proportion="0.31554523" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="59" selection-start="4877" selection-end="4877" vertical-scroll-proportion="0.5933014">
+        <state line="140" column="26" selection-start="4124" selection-end="4124" vertical-scroll-proportion="0.040669855">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tile_scrolling.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="4" selection-start="1477" selection-end="1477" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="51" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buffer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="18" selection-start="2965" selection-end="2979" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="2671" selection-end="2787" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
   </component>

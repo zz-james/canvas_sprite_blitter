@@ -131,13 +131,13 @@ var drawTiles = function(virtualX, startY) {
         for(counter=index+1; counter<index+limit; counter++)
         {
             // draw the next tile on the current row; always a full tile.
-            drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, TILE_WIDTH);
+           // drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, TILE_WIDTH);
             xcoord += TILE_WIDTH;
         }
 
         // draw right-most tile of the current row
         // (may be a partial tile)
-        drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, offset);
+       // drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, offset);
         index += TILE_COLS;
     }
 };
@@ -151,7 +151,7 @@ var drawTiles = function(virtualX, startY) {
  */
 var drawTile = function(bmp, x, y, offset, width)
 {
-
+ //console.log(y);
  var counter;
 
  //if(bmp == NULL) {return;} 			// don't draw empty tiles

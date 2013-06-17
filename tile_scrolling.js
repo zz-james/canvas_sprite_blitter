@@ -52,6 +52,9 @@ var returnToMain1 = function()
     // readTiles(); done -- will have to look into generalising this
 
     drawLayers();
+    //Show Buffer
+    IMAGE_DATA.data.set(CANVAS_VIEW);
+    CTX.putImageData(IMAGE_DATA, 0, 0);
 };
 
 

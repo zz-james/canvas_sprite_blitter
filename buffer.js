@@ -84,6 +84,13 @@ var cls = function() {
     CTX.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 };
 
+var kwikShowBuffer = function(buffer) {
+    var  canvas_buf = new Uint8Array(buffer);
+    CANVAS_VIEW.set(buffer);
+    IMAGE_DATA.data.set(CANVAS_VIEW);
+    CTX.putImageData(IMAGE_DATA, 0, 0);
+};
+
 /* REMEMBER WE NEED  THESE
 IMAGE_DATA.data.set(CANVAS_VIEW);
 CTX.putImageData(IMAGE_DATA, 0, 0);

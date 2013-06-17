@@ -4,7 +4,7 @@
  * Date: 04/06/13
  * Time: 17:12
  */
-"use strict";     //what
+"use strict";
 
 /**
  * a lot of global shit here that doesn't need to be
