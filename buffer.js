@@ -39,7 +39,7 @@ var CTX = CANVAS.getContext('2d');
 var IMAGE_DATA = CTX.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 /* this sets up a video buffer. */
-var VIDEO_BUFFER = new ArrayBuffer(SCREEN_WIDTH * SCREEN_HEIGHT * 4); // 4 byes per pixel (32bit)
+var VIDEO_BUFFER = IMAGE_DATA.buffer; //
 
 // V I E W S /////////////////////////////////////////////////////////////
 var CANVAS_VIEW = new Uint8ClampedArray(VIDEO_BUFFER); // 8 bit aligned for assigning to canvas
