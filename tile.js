@@ -14,9 +14,11 @@ var TILE_ROWS = 6;
 
 var TILE_WIDTH = 32;
 var TILE_HEIGHT = 32;
+var byte_TILE_WIDTH = TILE_WIDTH * 4;
 
 var TILES_TOTAL = (TILE_COLS * TILE_ROWS);
 var TILES_PER_ROW = (SCREEN_WIDTH / TILE_WIDTH);
+var TOTAL_SCROLL = (TILES_PER_ROW * byte_TILE_WIDTH);
 var SHIFT = 5; // used to shift 32, the tile size
 
 var TILES = []; // up to NUM_TILES+1 (pointers to bitmap buffers)
@@ -27,7 +29,7 @@ var TILE_WALL = 1;
 var TILE_LADDER = 2;
 
 
-var position = 0;
+var POS = 0;
 
 /**
  * This function initializes a tile with the sent data
@@ -77,7 +79,7 @@ var tileGrabBitmap = function(picture, tile, frame, grab_x, grab_y) {
     y_off = (TILE_HEIGHT+1) * grab_y + 1;
 
     // compute starting y address
-    y_off = y_off * TILE_WIDTH;
+    y_off = y_off * SCREEN_WIDTH;  // units are pixels not bytes as using Uint32Arrays
 
     for (y=0; y<TILE_HEIGHT; y++)
     {
@@ -105,7 +107,7 @@ var readTileMap = function() {
 
 /**
  * draws a screen full of tiles.
- * @param virtualX is the left corner x location within the 'virtual screen.
+ * @param virtualX is the left corner x location within the 'virtual screen'.
  * @param startY is the row to begin drawing from
  */
 var drawTiles = function(virtualX, startY) {
@@ -116,7 +118,7 @@ var drawTiles = function(virtualX, startY) {
     offset = virtualX - (index << SHIFT);	// virtualx
     limit = TILES_PER_ROW;			        // 10
 
-    if(offset == 0){limit--;}			    // limit now 9.
+  //  if(offset == 0){limit--;}			    // limit now 9.
 
     for(row = startY; row < startY + (TILE_HEIGHT * TILE_ROWS); row += TILE_HEIGHT)   // looping ROWS i.e. vertical
     {
@@ -131,13 +133,13 @@ var drawTiles = function(virtualX, startY) {
         for(counter=index+1; counter<index+limit; counter++)
         {
             // draw the next tile on the current row; always a full tile.
-           // drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, TILE_WIDTH);
+            drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, TILE_WIDTH);
             xcoord += TILE_WIDTH;
         }
 
         // draw right-most tile of the current row
         // (may be a partial tile)
-       // drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, offset);
+        drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, offset);
         index += TILE_COLS;
     }
 };
@@ -149,21 +151,24 @@ var drawTiles = function(virtualX, startY) {
  * @param offset - defines the starting column within the tile.
  * @param width - defines the length of the tile to draw.
  */
-var drawTile = function(bmp, x, y, offset, width)
+var drawTile = function(bmp_buf, x, y, offset, width)
 {
- //console.log(y);
  var counter;
 
- //if(bmp == NULL) {return;} 			// don't draw empty tiles
- var destOffset = 0; 	// calc offset in memory buf.
- var srcOffest = offset; 					// get bit map to draw
+ x = x*4;                       // convert from pixels to bytes
+ offset = offset * 4;           // convert from pixels to bytes
+ width = width * 4;             // convert from pixels to bytes
+
+ //if(bmp == NULL) {return;} 	// don't draw empty tiles
+ var destOffset = 0;            // calc offset in memory buf.
+ var srcOffest = 0;
 
  // draw each scanline of the bit map
  for(counter=0;counter<TILE_HEIGHT;counter++)
  {
- memcpy(VIDEO_BUFFER, (y * (SCREEN_WIDTH * 4) + (x * 4) + destOffset), bmp, ((offset *4) + (srcOffest * 4)), width * 4);		// copy from bitmap to membuf
- destOffset += SCREEN_WIDTH;
- srcOffest += TILE_WIDTH;
+    memcpy(VIDEO_BUFFER, ((y * byte_SCREEN_WIDTH) + x) + destOffset , bmp_buf, offset + srcOffest, width);
+    destOffset += byte_SCREEN_WIDTH;
+    srcOffest += byte_TILE_WIDTH;
  }
 
 };

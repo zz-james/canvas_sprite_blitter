@@ -8,8 +8,9 @@
 
 var TILE_SHEET;
 var TILE_MAP = new Uint8Array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,0,0,0,0,4,4,1,2,3,4,4,4,0,0,0,0,0,0,0,0,0,0,0,4,1,2,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,5,4,4,4,5,4,4,4,4,0,0,0,0,0,0,4,6,4,0,0,0,0,4,5,4,4,1,2,2,3,4,4,1,2,3,4,4,0,0,0,0,0,0,4,6,4,5,5,5,4,6,4,4,4,4,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,6,4,4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,4,1,2,2,3,4,4,4,4,4,6,4,4,4,4,4,6,4,4,4,5,4,5,4,4,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,0,0,4,4,4,4,4,4,6,4,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0]);
-
-
+var POS; // the position of the tile layer
+var BACK_POS; // temporary.
+var done = 0;
 /**
  * This routine draws the parallax layers. The order of the
  * functions determines the z-ordering of the layers
@@ -17,7 +18,7 @@ var TILE_MAP = new Uint8Array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,0
 var drawLayers = function()
 {
     //opaqueBlt(backGroundBmp,0,100,background);
-    drawTiles(position,0);
+    drawTiles(POS,0);
 };
 
 
@@ -55,8 +56,65 @@ var returnToMain1 = function()
     //Show Buffer
     IMAGE_DATA.data.set(CANVAS_VIEW);
     CTX.putImageData(IMAGE_DATA, 0, 0);
+
+    // call main event loop
+    requestAnimFrame(mainLoop);
 };
 
+
+/**
+ * this is the game loop
+ */
+var mainLoop = function() {
+
+    // has the user pressed a key?
+    if(Object.keys(pressed).length)
+    {
+        // test what key was pressed
+        if(pressed[39]){
+            POS  += 4;
+            if(POS > TOTAL_SCROLL)
+            {
+                POS = TOTAL_SCROLL;
+            }
+            BACK_POS -= 1;						// scroll BACK_POS left
+            // one pixel
+            if(BACK_POS < 1) 	   				// did we read the end??
+                BACK_POS += SCREEN_WIDTH;		// yes, wrap around
+        }
+
+        if(pressed[37]) {
+            POS  -= 4;
+            if(POS < 0)
+            {
+                POS = 0;
+            }
+            BACK_POS += 1;						// scroll BACK_POS right
+            // one pixel
+            if(BACK_POS > SCREEN_WIDTH - 1)		// reach end??
+                BACK_POS -= SCREEN_WIDTH;		// yes, wrap around
+        }
+
+        if(pressed[81]) {
+            // the user is exiting
+            console.log('quitting');
+            done = 1;
+        }
+    }
+
+    drawLayers(); // draw parallax layer(s) in RGB_VIEW
+
+    // update canvas buffer and write to screen
+    IMAGE_DATA.data.set(CANVAS_VIEW);
+    CTX.putImageData(IMAGE_DATA, 0, 0);
+
+    /* end main loop body */
+    if(!done)
+    {requestAnimFrame(mainLoop);}
+    else
+    {/* exit loop */ console.log("done");}
+
+};
 
 // go!!
 main();

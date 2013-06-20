@@ -7,69 +7,20 @@
  */
 "use strict";
 
-/* DEFINES - COME BACK TO THESE
-#define NUM_STARS   75
-#define PLANE_1     1
-#define PLANE 2     2
-#define PLANE_3     3
-
-#define SCREEN_WIDTH UINT 320
-#define SCREEN_HEIGHT UINT 200
- */
 var NUM_STARS = 275, SCREEN_WIDTH = 960, SCREEN_HEIGHT = 512;
 var PLANE_1 = 1, PLANE_2 = 2, PLANE_3 = 3;
-
-/* PROTOTYPES - NOT NECESSARY BUT HEY */
-
-// blitChar(int xc, int yc, char c, int color, int trans_flag)
-// plotPixel(int x, int y, color)
-// initStars()
-// delay() // probably don't need!
-
-
-/* STRUCT MAKERS - USE VALUE ONLY OBJECTS */
-
-// returns data strucure for a single star
-// n.b. abandoned odd idea to use bitwise OR as a typehinter for jitter...
-var star = function(){ return {x: 0,  y: 0, plane: 0, color: 0xffffffff} };
-
-/* GLOBALS AND DOM SETUP SHIT */
-
-// grab element info from HTML doc
-var canvas = document.getElementById('canvas'); // should really create canvas & attach
-var ctx = canvas.getContext('2d');
-var imageData = ctx.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-/* this sets up a video buffer. */
-var videoBuffer = new ArrayBuffer(SCREEN_WIDTH * SCREEN_HEIGHT * 4); // 4 byes per pixel (32bit)
-
-/* create 2 aligned views of data */
-var canvasView = new Uint8ClampedArray(videoBuffer); // 8 bit aligned for assigning to canvas
-var RGBView = new Uint32Array(videoBuffer); // 32 bit aligned for quick 32bit RGB writes
-
-/* determine endianness */
-var littleEndian = new Int8Array(new Int16Array([1]).buffer)[0] > 0;
-
-
-// ## like an ifdef we generate 2 different functions for the endianneess ## //
-if (littleEndian) {
-
-    var plotPixelFast = function(x,y,color) {
-       // console.log(y);
-        RGBView[y * SCREEN_WIDTH + x] = color;
-    }
-
-} else {
-
-    var plotPixelFast = function(x,y,color) {
-        RGBView[y * SCREEN_WIDTH + x] = color;
-    }
-
-}
-// ## end like an ifdef we generate 2 different functions for the endianneess ## //
-
 //@int
 var starFirst = 1;
+
+/**
+ * starFactory maxes a star object
+ * @returns {{x: number, y: number, plane: number, color: number}}
+ */
+var starFactory = function(){
+    return {x: 0,  y: 0, plane: 0, color: 0xffffffff}
+};
+
+
 
 /**
  * arrayFill returns an array full something you send.
@@ -83,7 +34,7 @@ var arrayFill = function(object, length) {
 };
 
 /* star stars[NUM_STARS];*/
-var stars = arrayFill(star,NUM_STARS);
+var stars = arrayFill(starFactory,NUM_STARS);
 
 var velocity_1 = 2, velocity_2 = 4, velocity_3 = 6;
 
@@ -119,23 +70,10 @@ var initStars = function() {
 
 var notdone = 1, index;
 
-var pressed={};
-document.onkeydown=function(e){
-    e = e || window.event;
-    pressed[e.keyCode] = true;
-};
-
-document.onkeyup=function(e){
-    e = e || window.event;
-    delete pressed[e.keyCode];
-};
-
-
 initStars();
 
-window.mainloop = function(event) /* randomly plot 50000 pixels. */
+var mainloop = function()
 {
-    event.stopPropagation();
     /* main loop body */
 
     if(Object.keys(pressed).length)
@@ -189,15 +127,14 @@ window.mainloop = function(event) /* randomly plot 50000 pixels. */
 
     }
 
-    imageData.data.set(canvasView);
-    ctx.putImageData(imageData, 0, 0);
+    IMAGE_DATA.data.set(CANVAS_VIEW);
+    CTX.putImageData(IMAGE_DATA, 0, 0);
 
     /* end main loop body */
     if(notdone)
-    { window.postMessage("*", "*"); }
+    { requestAnimFrame(mainloop); }
     else
     {/* exit loop */ console.log("done");}
 };
 
-window.addEventListener("message", mainloop, true);
-window.postMessage("*", "*");
+requestAnimFrame(mainloop);

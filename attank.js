@@ -15,9 +15,7 @@
 var TANK_SPEED = 4;
 var PI = Math.PI;
 
-// declared in image.js
-SPRITE_WIDTH = 16;
-SPRITE_HEIGHT = 16;
+
 
 var index; // counters
 
@@ -90,7 +88,7 @@ var returnToMain2 = function()
     behindSprite(tank2); // enemy
 
     // call main event loop
-    window.postMessage("*", "*");
+    requestAnimFrame(mainLoop);
 };
 
 
@@ -98,8 +96,7 @@ var returnToMain2 = function()
  * this is the game loop
  * @param event
  */
-window.mainLoop = function(event) {
-    event.stopPropagation();
+var mainLoop = function(event) {
     // console.log('boom');
 
     // S E C T I O N  4 //////////////////////////////////////////////////
@@ -274,11 +271,10 @@ window.mainLoop = function(event) {
 
     /* end main loop body */
     if(!done)
-    { window.postMessage("*", "*"); }
+    { requestAnimFrame(mainLoop); }
     else
     {/* exit loop */ console.log("done");}
 
 };
 
-window.addEventListener("message", mainLoop, true);
 main();

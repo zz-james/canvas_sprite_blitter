@@ -7,6 +7,8 @@
 "use strict";
 
 var BACKGROUND_WIDTH = 320;
+var byte_BACKGROUND_WIDTH = BACKGROUND_WIDTH * 4; // convert background width into bytes
+
 var BG;					    // bitmap loader object
 var BACKGROUND_BUFFER;	    // pointer to background bit map buffer
 var BACK_POS = 300;			// left-half position in background
@@ -19,22 +21,20 @@ var done = 0;
 var opaqueBlt = function(scrollSplit)
 {
 
-    // PROBLEM WITH RANGE 290 - 320       // 3840 - 1280  = 2560
-
     var dstOffset = 0;
     var srcOffset = 0;
-    scrollSplit = scrollSplit * 4; // we're in 4 byte per pixel world
+    scrollSplit = scrollSplit * 4; // convert scrollSplit to bytes
 
     for(var counter = 0;  counter < SCREEN_HEIGHT;  counter++)
     {
         // draw the left bit map half in the right half of the memory buffer
-        memcpy(VIDEO_BUFFER, (dstOffset * 4) + scrollSplit , BACKGROUND_BUFFER , (srcOffset * 4) , (SCREEN_WIDTH * 4) - scrollSplit );
+        memcpy(VIDEO_BUFFER, scrollSplit + dstOffset , BACKGROUND_BUFFER , srcOffset , (byte_SCREEN_WIDTH - scrollSplit) );
 
         // draw the right bit map half in the left half of the memory buffer
-        memcpy(VIDEO_BUFFER, (dstOffset * 4) , BACKGROUND_BUFFER, (srcOffset * 4) + (SCREEN_WIDTH * 4) - scrollSplit  , scrollSplit );
+        memcpy(VIDEO_BUFFER, dstOffset , BACKGROUND_BUFFER, (byte_SCREEN_WIDTH - scrollSplit) + srcOffset  , scrollSplit );
 
-        srcOffset += SCREEN_WIDTH;
-        dstOffset += SCREEN_WIDTH;
+        srcOffset += byte_BACKGROUND_WIDTH;
+        dstOffset += byte_SCREEN_WIDTH;
     }
 };
 
@@ -62,28 +62,28 @@ var returnToMain1 = function()
 {
     // save pointer to bitmap
     BACKGROUND_BUFFER = BG.rgb_view.buffer;
-    window.postMessage("*", "*");
+    requestAnimFrame(mainLoop);
 };
 
 /**
  * this is the game loop
  */
-window.mainLoop = function(event) {
-    event.stopPropagation();
+var mainLoop = function() {
+
     // has the user pressed a key?
     if(Object.keys(pressed).length)
     {
         // test what key was pressed
-        if(pressed[37]){
+        if(pressed[39]){
             BACK_POS -= 1;						// scroll BACK_POS left
-                                                // two pixels
+                                                // one pixel
             if(BACK_POS < 1) 	   				// did we read the end??
                 BACK_POS += SCREEN_WIDTH;		// yes, wrap around
         }
 
-        if(pressed[39]) {
+        if(pressed[37]) {
             BACK_POS += 1;						// scroll BACK_POS right
-                                                // two pixels
+                                                // one pixel
             if(BACK_POS > SCREEN_WIDTH - 1)		// reach end??
                 BACK_POS -= SCREEN_WIDTH;		// yes, wrap around
         }
@@ -103,11 +103,10 @@ window.mainLoop = function(event) {
 
     /* end main loop body */
     if(!done)
-    {window.postMessage("*", "*");}
+    {requestAnimFrame(mainLoop);}
     else
     {/* exit loop */ console.log("done");}
 
 };
 
-window.addEventListener("message", mainLoop, true);
 main();

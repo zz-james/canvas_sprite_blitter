@@ -8,6 +8,7 @@
 
 var SCROLL_WIDTH = 640;
 var SCROLL_HEIGHT = 200;
+var byte_SCROLL_WIDTH = SCROLL_WIDTH * 4; // 1 pixel is 4 bytes
 
 var SCROLL_BUFFER; // pointer to scroll buffer
 var SCROLL_BUFFER_RGB_VIEW; // 32 bit aligned for quick 32bit RGB writes
@@ -25,13 +26,13 @@ var showViewPort = function(buffer, pos) {
     for(y=0; y<200; y++){
 
         // compute the starting offset into scroll buffer
-        scroll_off = (y * SCROLL_WIDTH * 4) + pos * 4;
+        scroll_off = (y * byte_SCROLL_WIDTH) + (pos * 4); // convert pos to bytes
 
         // compute the starting offset in video_buffer's RGB_VIEW
-        screen_off = (y * SCREEN_WIDTH * 4);
+        screen_off = (y * byte_SCREEN_WIDTH);
 
         // move the data
-        memcpy(VIDEO_BUFFER, screen_off, buffer, scroll_off, SCREEN_WIDTH);
+        memcpy(VIDEO_BUFFER, screen_off, buffer, scroll_off, byte_SCREEN_WIDTH);
     }
 };
 
@@ -75,7 +76,7 @@ var drawTerrain = function() {
 var main = function() {
 
     // allocate memory for the scrolling buffer
-    SCROLL_BUFFER = new ArrayBuffer(SCROLL_WIDTH * SCROLL_HEIGHT * 4); // 4 byes per pixel (32bit)
+    SCROLL_BUFFER = new ArrayBuffer(byte_SCROLL_WIDTH * SCROLL_HEIGHT); // 4 byes per pixel (32bit)
     SCROLL_BUFFER_RGB_VIEW = new Uint32Array(SCROLL_BUFFER); // 32 bit aligned for quick 32bit RGB writes
 
     // draw the mountains
@@ -84,14 +85,14 @@ var main = function() {
     // show the initial view
     showViewPort(SCROLL_BUFFER, sx);
     //temp
-    window.postMessage("*", "*");
+    requestAnimFrame(mainLoop);
 };
 
 /**
  * this is the game loop
  */
-window.mainLoop = function(event) {
-    event.stopPropagation();
+var mainLoop = function() {
+
     // has the user pressed a key?
     if(Object.keys(pressed).length)
     {
@@ -122,11 +123,10 @@ window.mainLoop = function(event) {
 
     /* end main loop body */
     if(!done)
-    {window.postMessage("*", "*");}
+    {requestAnimFrame(mainLoop);}
     else
     {/* exit loop */ console.log("done");}
 
 };
 
-window.addEventListener("message", mainLoop, true);
 main();

@@ -15,6 +15,7 @@ var CELL_ROWS = 6;
 
 var CELL_WIDTH = 32;   // width of a cell in pixels
 var CELL_HEIGHT = 32;  // height of a cell in pixels
+var byte_CELL_WIDTH = CELL_WIDTH * 4; // convert cell width to bytes
 
 var NUM_SCREENS = 6;   // number of screens in game
 
@@ -160,6 +161,7 @@ var returnToMain1 = function()
     // declared in image.js
     SPRITE_WIDTH = 32;
     SPRITE_HEIGHT = 32;
+    byte_SPRITE_WIDTH = SPRITE_WIDTH * 4;
 
     // create a sprite for robopunk
     robopunk = spriteFactory(0,0,0,0,0,0);
@@ -211,7 +213,7 @@ var returnToMain1 = function()
     // scan background under robopunk
     behindSprite(robopunk);
     // call main event loop
-    window.postMessage("*", "*");
+    requestAnimFrame(mainLoop);
 };
 
 
@@ -219,8 +221,7 @@ var returnToMain1 = function()
 * this is the game loop
 * @param event
 */
-window.mainLoop = function(event) {
-    event.stopPropagation();
+var mainLoop = function() {
 
     // erase robopunk
     eraseSprite(robopunk);
@@ -347,13 +348,12 @@ window.mainLoop = function(event) {
     CTX.putImageData(IMAGE_DATA, 0, 0);
     /* end main loop body */
     if(!done)
-    { window.postMessage("*", "*"); }
+    { requestAnimFrame(mainLoop); }
     else
     {/* exit loop */ console.log("done");}
 
 
 }; // end main loop
 
-window.addEventListener("message", mainLoop, true);
 main();
 

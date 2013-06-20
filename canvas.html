@@ -8,16 +8,28 @@
             width: 640px;
         }
     </style>
+    <script language="javascript">
+    window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                window.oRequestAnimationFrame      ||
+                window.msRequestAnimationFrame     ||
+                function(/* function */ callback, /* DOMElement */ element){
+                    window.setTimeout(callback, 1000 / 60);
+                };
+    })();
+    </script>
 </head>
 <body style="background-color: #000;color:#fff">
   <span id="message">*** Arrow keys to move *** Q to quit ***</span> <br />
   <canvas id="canvas" height="200" width="320"></canvas>
 
   <script language="javascript" src="buffer.js"></script>
+  <script language="javascript" src="keys.js"></script>
   <script language="javascript" src="image.js"></script>
   <script language="javascript" src="sprite.js"></script>
-  <script language="javascript" src="keys.js"></script>
-  <script language="javascript" src="tile.js"></script>
   <script language="javascript" src="tile_scrolling.js"></script>
+  <script language="javascript" src="tile.js"></script>
 </body>
 </html>

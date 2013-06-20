@@ -1,31 +1,30 @@
 /**
- * Project: Canvas Sprite Blitter
  * User: james
- * Date: 06/05/13
- * Time: 18:41
+ * Date: 29/04/13
+ * Time: 17:14
  */
 "use strict";
 
-var notdone = 1, index = 0;
+var NUM_COLORS = 256;        /* number of colors in mode 0x13 */
 
-window.mainloop = function(event) /* randomly plot 50000 pixels. */
+var x,y,color;
+var i = 0;
+var start = (Date.now());
+
+var mainloop = function() /* randomly plot 50000 pixels. */
 {
-    event.stopPropagation();
-    /* main loop body */
-    var x = Math.random() * SCREEN_WIDTH << 0;
-    var y = Math.random() * SCREEN_HEIGHT << 0;
-    var color = 0xffffffff;//Math.random() * NUM_COLORS << 0;
-    plotPixelFast(x,y,color);
+    x = Math.random() * SCREEN_WIDTH << 0;
+    y = Math.random() * SCREEN_HEIGHT << 0;
+    color=Math.random() * NUM_COLORS << 0;
+    plotPixelFast(x,y,0xff0000ff);
 
     IMAGE_DATA.data.set(CANVAS_VIEW);
     CTX.putImageData(IMAGE_DATA, 0, 0);
-    index++;
-    /* end main loop body */
-    if(index != 10000)
-    { window.postMessage("*", "*"); }
+    i++;
+    if(i < 50000)
+    { requestAnimFrame(mainloop); }
     else
-    {/* exit loop */ console.log("done");}
+    {var end = (Date.now()); console.log(end-start);}
 };
 
-window.addEventListener("message", mainloop, true);
-window.postMessage("*", "*");
+requestAnimFrame(mainloop);

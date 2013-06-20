@@ -33,13 +33,15 @@
 // G L O B A L S /////////////////////////////////////////////////////////////
 var SCREEN_WIDTH = 320; // canvas dimensions
 var SCREEN_HEIGHT = 200;
+var byte_SCREEN_WIDTH = SCREEN_WIDTH * 4; // each pixel is 4 bytes
+
 
 var CANVAS = document.getElementById('canvas'); // should really create canvas & attach
 var CTX = CANVAS.getContext('2d');
 var IMAGE_DATA = CTX.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 /* this sets up a video buffer. */
-var VIDEO_BUFFER = IMAGE_DATA.buffer; //
+var VIDEO_BUFFER = new ArrayBuffer(byte_SCREEN_WIDTH * SCREEN_HEIGHT);
 
 // V I E W S /////////////////////////////////////////////////////////////
 var CANVAS_VIEW = new Uint8ClampedArray(VIDEO_BUFFER); // 8 bit aligned for assigning to canvas
