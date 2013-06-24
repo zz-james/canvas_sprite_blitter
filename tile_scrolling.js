@@ -7,9 +7,20 @@
 "use strict";
 
 var TILE_SHEET;
-var TILE_MAP = new Uint8Array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,0,0,0,0,4,4,1,2,3,4,4,4,0,0,0,0,0,0,0,0,0,0,0,4,1,2,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,5,4,4,4,5,4,4,4,4,0,0,0,0,0,0,4,6,4,0,0,0,0,4,5,4,4,1,2,2,3,4,4,1,2,3,4,4,0,0,0,0,0,0,4,6,4,5,5,5,4,6,4,4,4,4,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,6,4,4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,4,1,2,2,3,4,4,4,4,4,6,4,4,4,4,4,6,4,4,4,5,4,5,4,4,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,0,0,4,4,4,4,4,4,6,4,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0]);
+var TILE_MAP = new Uint8Array(
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,0,0,0,0,0,0,0,0,4,4,1,2,3,4,4,4,0,0,0,0,0,0,0,0,0,0,0,4,1,2,3,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,5,4,4,4,5,4,4,4,4,0,0,0,0,0,0,4,6,4,0,0,0,0,4,5,4,4,1,2,2,3,4,4,1,2,3,4,4,0,0,0,0,0,0,4,6,4,5,5,5,4,6,4,4,4,4,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,6,4,4,4,4,4,4,5,4,4,4,4,4,4,4,4,4,4,1,2,2,3,4,4,4,4,4,6,4,4,4,4,4,6,4,4,4,5,4,5,4,4,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,0,0,4,4,4,4,4,4,6,4,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,0
+    ]
+    );
+var NUM_TILES = 1;
+
+var TILE_COLS = 132;
+var TILE_ROWS = 3;
+
+var TILE_WIDTH = 32;
+var TILE_HEIGHT = 32;
+
+
 var POS; // the position of the tile layer
-var BACK_POS; // temporary.
 var done = 0;
 /**
  * This routine draws the parallax layers. The order of the
@@ -17,8 +28,8 @@ var done = 0;
  */
 var drawLayers = function()
 {
-    //opaqueBlt(backGroundBmp,0,100,background);
-    drawTiles(POS,0);
+    opaqueBlt(BACK_POS);
+    drawTiles(POS,104);
 };
 
 
@@ -31,6 +42,7 @@ var main = function()
     // load in background cells
     TILE_SHEET = pictureFactory();    // now background.buffer exists
     pictureLoad(TILE_SHEET, "ROBOPUNK.png", returnToMain1 );
+
 }; // end main
 
 var returnToMain1 = function()
@@ -52,6 +64,18 @@ var returnToMain1 = function()
     // readTileMap(); done - will have to look into generalising this
     // readTiles(); done -- will have to look into generalising this
 
+
+
+    BG = pictureFactory();
+    pictureLoad(BG, "background.png", returnToMain2 );
+
+
+};
+
+var returnToMain2 = function()
+{
+    // save pointer to bitmap
+    BACKGROUND_BUFFER = BG.rgb_view.buffer;
     drawLayers();
     //Show Buffer
     IMAGE_DATA.data.set(CANVAS_VIEW);
@@ -59,8 +83,8 @@ var returnToMain1 = function()
 
     // call main event loop
     requestAnimFrame(mainLoop);
-};
 
+};
 
 /**
  * this is the game loop
@@ -72,27 +96,29 @@ var mainLoop = function() {
     {
         // test what key was pressed
         if(pressed[39]){
-            POS  += 4;
+            POS  += 8;
             if(POS > TOTAL_SCROLL)
             {
                 POS = TOTAL_SCROLL;
-            }
+            } else {
             BACK_POS -= 1;						// scroll BACK_POS left
             // one pixel
             if(BACK_POS < 1) 	   				// did we read the end??
                 BACK_POS += SCREEN_WIDTH;		// yes, wrap around
+            }
         }
 
         if(pressed[37]) {
-            POS  -= 4;
+            POS  -= 8;
             if(POS < 0)
             {
                 POS = 0;
-            }
+            } else {
             BACK_POS += 1;						// scroll BACK_POS right
             // one pixel
             if(BACK_POS > SCREEN_WIDTH - 1)		// reach end??
                 BACK_POS -= SCREEN_WIDTH;		// yes, wrap around
+            }
         }
 
         if(pressed[81]) {

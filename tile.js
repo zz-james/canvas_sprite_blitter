@@ -8,18 +8,12 @@
 
 // G L O B A L S  ////////////////////////////////////////////////////////////
 
-var NUM_TILES = 17;
-var TILE_COLS = 66;
-var TILE_ROWS = 6;
 
-var TILE_WIDTH = 32;
-var TILE_HEIGHT = 32;
 var byte_TILE_WIDTH = TILE_WIDTH * 4;
 
 var TILES_TOTAL = (TILE_COLS * TILE_ROWS);
-var TILES_PER_ROW = (SCREEN_WIDTH / TILE_WIDTH);
-var TOTAL_SCROLL = (TILES_PER_ROW * byte_TILE_WIDTH);
-var SHIFT = 5; // used to shift 32, the tile size
+var TILES_PER_ROW = (SCREEN_WIDTH / TILE_WIDTH);  // number of VISIBLE tiles per row
+var TOTAL_SCROLL = (TILE_COLS * TILE_WIDTH ) - SCREEN_WIDTH; // in pixels
 
 var TILES = []; // up to NUM_TILES+1 (pointers to bitmap buffers)
 var TILE_MAP; // = new Uint8Array(TILES_TOTAL);
@@ -107,15 +101,15 @@ var readTileMap = function() {
 
 /**
  * draws a screen full of tiles.
- * @param virtualX is the left corner x location within the 'virtual screen'.
+ * @param xPos is the left corner x location within the 'virtual screen'.
  * @param startY is the row to begin drawing from
  */
-var drawTiles = function(virtualX, startY) {
+var drawTiles = function(xPos, startY) {
     var counter, xcoord, index, offset, row, limit;
 
     // get index of first visible tile
-    index = virtualX >> SHIFT;			    // 0
-    offset = virtualX - (index << SHIFT);	// virtualx
+    index = (xPos / 32) | 0;			// gives number of 32 bit blocks
+    offset = (xPos - index * 32) | 0;	// the remainder pixels
     limit = TILES_PER_ROW;			        // 10
 
   //  if(offset == 0){limit--;}			    // limit now 9.
@@ -127,19 +121,25 @@ var drawTiles = function(virtualX, startY) {
         // draw the leftmost tile
         // of the current row.
         // may be a partial tile
-        drawTile(TILES.frames[TILE_MAP[index]].buffer, 0, row, offset, TILE_WIDTH-offset);
+        if (TILE_MAP[index] != 0)  {
+            drawTile(TILES.frames[TILE_MAP[index]].buffer, 0, row, offset, TILE_WIDTH-offset);
+        }
 
         // draw the rest of the tiles in the middle
         for(counter=index+1; counter<index+limit; counter++)
         {
             // draw the next tile on the current row; always a full tile.
-            drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, TILE_WIDTH);
+            if (TILE_MAP[counter] != 0)  {
+                drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, TILE_WIDTH);
+            }
             xcoord += TILE_WIDTH;
         }
 
         // draw right-most tile of the current row
         // (may be a partial tile)
-        drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, offset);
+        if (TILE_MAP[counter] != 0)  {
+            drawTile(TILES.frames[TILE_MAP[counter]].buffer, xcoord, row, 0, offset);
+        }
         index += TILE_COLS;
     }
 };
