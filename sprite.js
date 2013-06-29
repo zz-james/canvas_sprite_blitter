@@ -14,8 +14,8 @@ var SPRITE_ALIVE = 1;
 var SPRITE_DYING = 2;
 
 // declared in image.js
-var SPRITE_WIDTH = 16;
-var SPRITE_HEIGHT = 16;
+var SPRITE_WIDTH = 32;
+var SPRITE_HEIGHT = 32;
 var byte_SPRITE_WIDTH = SPRITE_WIDTH * 4; // 4 bytes per pixel.
 
 /**
@@ -36,6 +36,8 @@ var spriteFactory = function(x,y,ac,as,mc,ms)
         y            : y,
         x_old        : x,
         y_old        : y,
+        x_tile       : (x / 16)|0,
+        y_tile       : (y / 16)|0,
         width        : SPRITE_WIDTH,
         height       : SPRITE_HEIGHT,
         anim_clock   : ac,

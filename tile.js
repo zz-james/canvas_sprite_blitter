@@ -13,14 +13,14 @@ var byte_TILE_WIDTH = TILE_WIDTH * 4;
 
 var TILES_TOTAL = (TILE_COLS * TILE_ROWS);
 var TILES_PER_ROW = (SCREEN_WIDTH / TILE_WIDTH);  // number of VISIBLE tiles per row
-var TOTAL_SCROLL = (TILE_COLS * TILE_WIDTH ) - SCREEN_WIDTH; // in pixels
+var TOTAL_SCROLL = ((TILE_COLS * TILE_WIDTH ) - SCREEN_WIDTH) | 0; // distance scroll in pixels
 
 var TILES = []; // up to NUM_TILES+1 (pointers to bitmap buffers)
 var TILE_MAP; // = new Uint8Array(TILES_TOTAL);
 
 var TILE_WALKABLE = 0;
 var TILE_WALL = 1;
-var TILE_LADDER = 2;
+var TILE_LADDER = 6; //6 or 7;
 
 
 var POS = 0;

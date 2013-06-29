@@ -1,5 +1,5 @@
 /**
- * Project:
+ * Project:   canvas blit
  * User: james
  * Date: 10/06/13
  * Time: 13:16

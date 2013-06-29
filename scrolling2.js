@@ -38,6 +38,20 @@ var opaqueBlt = function(scrollSplit)
     }
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * this function draws the parallax layers. The order of
  * the functions determines the z-ordering of the layers

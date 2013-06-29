@@ -32,7 +32,7 @@
 
 // G L O B A L S /////////////////////////////////////////////////////////////
 var SCREEN_WIDTH = 320; // canvas dimensions
-var SCREEN_HEIGHT = 200;
+var SCREEN_HEIGHT = 192;
 var byte_SCREEN_WIDTH = SCREEN_WIDTH * 4; // each pixel is 4 bytes
 
 
