@@ -8,7 +8,6 @@
 
 var BACKGROUND_WIDTH = 320;
 var byte_BACKGROUND_WIDTH = BACKGROUND_WIDTH * 4; // convert background width into bytes
-
 var BG;					    // bitmap loader object
 var BACKGROUND_BUFFER;	    // pointer to background bit map buffer
 var BACK_POS = 300;			// left-half position in background
