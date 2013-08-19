@@ -1,6 +1,6 @@
 General
 
-    SDL_Init - Initializes SDL
+    SDL_Init - Initializes SDL    PIX_Init
 
     SDL_Quit - Shuts down SDL
 

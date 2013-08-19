@@ -1,0 +1,6 @@
+- find out how jQuery etc. plug ins work
+- make image loading work
+- finish first blit
+- make it work right up to robo scroll (sprite, tile, intinite scroll, tile scroll)
+- build website like that example SDL one
+- build plug in physics engine.
