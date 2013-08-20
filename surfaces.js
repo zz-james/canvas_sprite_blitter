@@ -29,12 +29,13 @@ var PIX = (function() {
     "use strict";
 
     var my = {};
+    var error = ''; // error message string
     /* boolean to determine endianness */
-    var little_endian = new Int8Array(new Int16Array([1]).buffer)[0] > 0;
-    var ctx; // holds context object
-    var image_data; // typed array holding context image data
-    var byte_surface_width; // surface width in bytes is 4 x width in pixels as each pixel is 4 bytes
-    var surface_height; // surface height in pixels
+    var _little_endian = new Int8Array(new Int16Array([1]).buffer)[0] > 0;
+    var _ctx; // holds context object
+    var _imageData; // typed array holding context image data
+    var _byteSurfaceWidth; // surface width in bytes is 4 x width in pixels as each pixel is 4 bytes
+    var _surfaceHeight; // surface height in pixels
 
     /**
      * initialises the pix_elf library
@@ -51,10 +52,10 @@ var PIX = (function() {
         // test if we can do this
         // if not return false
         // otherwise
-        ctx = canvas.getContext('2d');
-        image_data = ctx.getImageData(0, 0, w, h);
-        byte_surface_width = w << 2; // w * 4
-        surface_height = h;
+        _ctx = canvas.getContext('2d');
+        _imageData = _ctx.getImageData(0, 0, w, h);
+        _byteSurfaceWidth = w << 2; // w * 4
+        _surfaceHeight = h;
         // and return true
         return true;
 
@@ -67,7 +68,7 @@ var PIX = (function() {
      * @returns {ArrayBuffer}
      */
     my.PIX_GetMainSurface = function() {
-        return new ArrayBuffer(byte_surface_width * surface_height);
+        return new ArrayBuffer(_byteSurfaceWidth * _surfaceHeight);
     };
 
     /*
@@ -77,6 +78,9 @@ var PIX = (function() {
     */
 
 
+    my.ERR = function() {
+        return error;
+    }
 
 
 

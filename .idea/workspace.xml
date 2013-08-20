@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="now begin the transform this into a library with a decent interface">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/todo.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TANKS.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/attank.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dots.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/infinite_scroll.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/keys.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/robo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/robopunk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scrolling.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scrolling2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/starfield.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tile_scrolling.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tile_scrolling_robo.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/buffer.js" afterPath="$PROJECT_DIR$/surfaces.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SDL_API_LIST.txt" afterPath="$PROJECT_DIR$/SDL_API_LIST.txt" />
+    <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas.html" afterPath="$PROJECT_DIR$/canvas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image.js" afterPath="$PROJECT_DIR$/image.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/surfaces.js" afterPath="$PROJECT_DIR$/surfaces.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="canvas_sprite_blitter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376940446440" ignored="false" />
+    <file path="/Dummy.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377016295339" ignored="false" />
     <file path="/sprite.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1372588867051" ignored="false" />
     <file path="/tile_scrolling_robo.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1372592115536" ignored="false" />
-    <file path="/canvas.html" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376940883676" ignored="false" />
-    <file path="/surfaces.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376943922203" ignored="false" />
+    <file path="/canvas.html" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377015680921" ignored="false" />
+    <file path="/surfaces.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377008130400" ignored="false" />
     <file path="/SDL_API_LIST.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376941888275" ignored="false" />
     <file path="/todo.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376945232629" ignored="false" />
+    <file path="/image.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377015092034" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +36,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="canvas.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/canvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="48" selection-start="853" selection-end="853" vertical-scroll-proportion="-13.0">
+            <state line="62" column="37" selection-start="2116" selection-end="2116" vertical-scroll-proportion="0.6527778">
               <folding />
             </state>
           </provider>
@@ -61,7 +48,7 @@
       <file leaf-file-name="surfaces.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/surfaces.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="36" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0">
+            <state line="31" column="18" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -70,16 +57,7 @@
       <file leaf-file-name="image.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="0" selection-start="2671" selection-end="2787" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="todo.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/todo.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="83" selection-start="170" selection-end="170" vertical-scroll-proportion="0.098684214">
+            <state line="21" column="42" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -129,7 +107,6 @@
       <list>
         <option value="$PROJECT_DIR$/scrolling.js" />
         <option value="$PROJECT_DIR$/scrolling2.js" />
-        <option value="$PROJECT_DIR$/image.js" />
         <option value="$PROJECT_DIR$/attank.js" />
         <option value="$PROJECT_DIR$/robopunk.js" />
         <option value="$PROJECT_DIR$/buffer.js" />
@@ -138,11 +115,12 @@
         <option value="$PROJECT_DIR$/sprite.js" />
         <option value="$PROJECT_DIR$/tile_scrolling_robo.js" />
         <option value="$PROJECT_DIR$/infinite_scroll.js" />
-        <option value="$PROJECT_DIR$/canvas.html" />
         <option value="$PROJECT_DIR$/SDL_API_LIST.txt" />
         <option value="$PROJECT_DIR$/pastebin.txt" />
-        <option value="$PROJECT_DIR$/surfaces.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
+        <option value="$PROJECT_DIR$/surfaces.js" />
+        <option value="$PROJECT_DIR$/image.js" />
+        <option value="$PROJECT_DIR$/canvas.html" />
       </list>
     </option>
   </component>
@@ -322,19 +300,21 @@
       <created>1376938451110</created>
       <updated>1376938451110</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="now begin the transform this into a library with a decent interface">
+      <created>1376945274933</created>
+      <updated>1376945274933</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1024" height="576" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8112033" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.63692945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2685547" sideWeight="0.36307055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26757812" sideWeight="0.36307055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987553" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -343,6 +323,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.63692945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -425,19 +407,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/image.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="0" selection-start="2671" selection-end="2787" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pastebin.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="30" selection-start="779" selection-end="779" vertical-scroll-proportion="-4.5191875">
+        <state line="21" column="42" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -449,9 +419,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pastebin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/canvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="853" selection-end="853" vertical-scroll-proportion="-13.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -470,9 +447,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SDL_API_LIST.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="34" selection-start="43" selection-end="51" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pastebin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="2671" selection-end="2787" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pastebin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="30" selection-start="779" selection-end="779" vertical-scroll-proportion="-4.5191875" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="83" selection-start="170" selection-end="170" vertical-scroll-proportion="0.098684214">
+        <state line="6" column="26" selection-start="245" selection-end="245" vertical-scroll-proportion="0.19736843" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDL_API_LIST.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="34" selection-start="43" selection-end="51" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/surfaces.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="18" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="42" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="37" selection-start="2116" selection-end="2116" vertical-scroll-proportion="0.6527778">
           <folding />
         </state>
       </provider>

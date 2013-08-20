@@ -6,6 +6,39 @@
  */
 "use strict";
 
+
+var PIX = (function (my) {
+
+    var _D_imageObjectContainer = [];
+
+    var _asyncLoad = function(task,callback) {
+
+    };
+
+    var _loadCallback = function() {
+
+    };
+
+    my.PIX_LoadImage = function (surface, url) {
+        var D_img = new Image();
+        D_img.onload = function(e) {
+            putImageDataInBuffer(picture);
+            callback(picture);
+        };
+
+        _D_imageObjectContainer.push(D_img);
+        D_img.src = url;
+    };
+
+
+
+    return my;
+}(PIX));
+
+
+
+
+
 // G L O B A L S  ////////////////////////////////////////////////////////////
 
 // reusable dom objects
