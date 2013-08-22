@@ -1,0 +1,27 @@
+    // G L O B A L S /////////////////////////////////////////////////////////////
+    var SCREEN_WIDTH = 320; // canvas dimensions
+    var SCREEN_HEIGHT = 192;
+    var byte_SCREEN_WIDTH = SCREEN_WIDTH * 4; // each pixel is 4 bytes
+
+    var CANVAS = document.getElementById('canvas'); // should really create canvas & attach
+
+   /* determine endianness */
+    var LITTLE_ENDIAN = new Int8Array(new Int16Array([1]).buffer)[0] > 0;
+
+    // F U N C T I O N S /////////////////////////////////////////////////////////////
+    // ## like an ifdef we generate 2 different functions for the endianneess ## //
+    if (LITTLE_ENDIAN) {
+
+        var plotPixelFast = function(x,y,color) {
+            // console.log(y);
+            RGB_VIEW[y * SCREEN_WIDTH + x] = color;
+        }
+
+    } else {
+
+        var plotPixelFast = function(x,y,color) {
+            RGB_VIEW[y * SCREEN_WIDTH + x] = color;
+        }
+
+    }
+    // ## end like an ifdef we generate 2 different functions for the endianneess ## //

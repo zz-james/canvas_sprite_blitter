@@ -9,28 +9,76 @@
 
 var PIX = (function (my) {
 
-    var _D_imageObjectContainer = [];
+    var _D_bufferDataContainer = [];
+    var _numImgs;
+    var _numLoadedImgs = 0;
+    var _callback;
+    var _D_tmpImg = new Image(); // just have this image pointer in heap
 
-    var _asyncLoad = function(task,callback) {
+    my.IMG_QueueImage = function (surface, url) {
+        //check if 'surface' is actually a valid
+        if (!surface.hasOwnProperty('surface')) {
+           throw "not a valid surface object please ensure the surface is properly initialised using IMG_NewSurface";
+        }
 
-    };
-
-    var _loadCallback = function() {
-
-    };
-
-    my.PIX_LoadImage = function (surface, url) {
         var D_img = new Image();
+
         D_img.onload = function(e) {
-            putImageDataInBuffer(picture);
-            callback(picture);
+
+            _numLoadedImgs++;
+            if(_numLoadedImgs === _numImgs) {
+                putImageDataInBuffer();
+                _callback();
+            }
         };
 
-        _D_imageObjectContainer.push(D_img);
-        D_img.src = url;
+        D_img.onerror = function(e) {
+            throw "there was an error loading "+ e.currentTarget.name;
+        };
+
+        D_img.name = url;    // when we load we'll set src = name
+        _D_bufferDataContainer.push({buffer:surface, image: D_img});
+        _numImgs = _D_bufferDataContainer.length;
+
     };
 
+    /**
+     * itterate over list of buffer objects setting the src
+     * property of the image objects which will trigger the download
+     * @param callback ; the function to call when all the images are loaded
+     */
+    my.IMG_LoadImages = function(callback) {
+        _callback = callback;
+        for (var i = 0; i < _numImgs; i++) {
+            _D_tmpImg = _D_bufferDataContainer[i].image;
+            _D_tmpImg.src = _D_tmpImg.name;
+            // setting src property triggers loading
+        }
+    };
 
+    var putImageDataInBuffer = function() {
+
+        var D_offscreen_canvas = document.createElement('canvas');
+        var D_offscreen_context = D_offscreen_canvas.getContext('2d');
+
+        for (var i = 0; i < _numImgs; i++) {
+            _D_tmpImg = _D_bufferDataContainer[i].image;
+            var width = _D_tmpImg.width;
+            var height = _D_tmpImg.height;
+            D_offscreen_canvas.width = width;
+            D_offscreen_canvas.height = width;
+            D_offscreen_context.drawImage(_D_tmpImg,0,0);
+            _D_bufferDataContainer[i].buffer.img = _D_tmpImg;
+            _D_bufferDataContainer[i].buffer.surface = D_offscreen_context.getImageData(0, 0, width, height);
+        }
+    };
+
+    var IMG_AreWeDoneYet = function() {
+        if(_numLoadedImgs === _numImgs) {
+            return true;
+        }
+        return false;
+    };
 
     return my;
 }(PIX));
@@ -38,92 +86,4 @@ var PIX = (function (my) {
 
 
 
-
-// G L O B A L S  ////////////////////////////////////////////////////////////
-
-// reusable dom objects
-var DOM_IMAGE_OBJECT = new Image();
-var OFFSCREEN_CANVAS = document.createElement('canvas');
-var OFFSCREEN_CONTEXT = OFFSCREEN_CANVAS.getContext('2d');
-
-OFFSCREEN_CANVAS.width = SCREEN_WIDTH;
-OFFSCREEN_CANVAS.height = SCREEN_HEIGHT;
-
-// F U N C T I O N S ///////////////////////////////////////////////////////
-
-
-/**
- * this function allocates the buffer region needed to load a pcx file
- * and returns an object with 2 views, an 8 bit view for canvas and
- * a 32 bit view for pixel manipulation. the buffer is the same dimensions
- * as the canvas area.
- */
-var pictureFactory = function() {
-    var buffer = new ArrayBuffer(SCREEN_WIDTH * SCREEN_HEIGHT * 4);
-    return {
-        filename : 'UNINTIALISED',
-        cnv_view : new Uint8ClampedArray(buffer), // 8 bit aligned for assigning to canvas
-        rgb_view : new Uint32Array(buffer)
-    };
-};
-
-
-/**
- * this function loads a png file into a picture object, the actual image
- * data for the png file is stored in a secondary buffer within the picture structure,
- * the separate images can be grabbed from this buffer later.
- * remember image loading is asynch and so we need a handler &
- * a callback to jump back in to main.
- *
- * uses global DOM_IMAGE_OBJECT which is a shared DOM object for loading images
- *
- * @param picture - picture object created with pictureFactory method
- * @param filename - filename of image obs.
- * @param callback - function object to jump back to when image loaded
- */
-var pictureLoad = function( picture, filename, callback ) {
-    DOM_IMAGE_OBJECT.onload = function(e) {
-       putImageDataInBuffer(picture);
-       callback(picture);
-    };
-
-    DOM_IMAGE_OBJECT.src = filename;
-    picture.filename = filename;
-};
-
-/**
- * this function works with pictureLoad to put the image data into the
- * picture object buffer
- *
- * uses the global OFFSCREEN_CONTEXT which is a shared DOM object
- *
- * @param picture - picture object created with pictureFactory
- */
-var putImageDataInBuffer = function(picture) {
-    OFFSCREEN_CONTEXT.clearRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    OFFSCREEN_CONTEXT.drawImage(DOM_IMAGE_OBJECT,0,0);
-    var imageData = OFFSCREEN_CONTEXT.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    picture.cnv_view.set(imageData.data); // data is a Uint8ClampedArray
-};
-
-/**
- * this just a function to display whatever is in the buffer of a
- * picture object not usually used in a game
- * @param picture
- */
-var pictureShowBuffer = function(picture) {
-    CANVAS_VIEW.set(picture.cnv_view);
-    IMAGE_DATA.data.set(CANVAS_VIEW);
-    CTX.putImageData(IMAGE_DATA, 0, 0);
-};
-
-/**
- * clear the picture buffer of a picture object
- * todo: probs can just clear the buffer and maybe
- * this could be used again in a object pool
- * @param picture
- */
-var pictureDelete = function(picture) {
-    picture.buffer = null;
-};
 

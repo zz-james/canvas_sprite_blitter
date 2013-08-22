@@ -2,12 +2,6 @@
 <html>
 <head>
     <title>Canvas</title>
-    <style>
-        #canvas {
-            height: 400px;
-            width: 640px;
-        }
-    </style>
     <script language="javascript">
     window.requestAnimFrame = (function(){
         return  window.requestAnimationFrame       ||
@@ -21,47 +15,12 @@
     })();
     </script>
 </head>
-<body style="background-color: #000;color:#fff">
-  <canvas id="canvas" height="200" width="320"></canvas>
+<body style="background-color: #883333;color:#fff" id="bod" >
+  <canvas id="canvas" width="640" height="480" style="border: 1px solid red"></canvas>
 
   <script language="javascript" src="surfaces.js"></script>
   <script language="javascript" src="image.js"></script>
-  <script language="javascript">
-      var screen; // pixelf surface objects (main)
-      var image_buf; // pixelf surface object (buffer)
-      var src, dest; // pixelf rect objects
-
-      /* initiate pixelf and check for errors */
-      if(PIX.PIX_Init(document.getElementById('canvas'),640,480 ) != true)
-      {
-          console.log('unable to initialise pix-elf' + PIX.err());
-      }
-
-      screen = PIX.PIX_GetMainSurface();
-
-      PIX.PIX_LoadImage(image_buf, "OUTPOST.png");   /* this goes into a loading loop */
-      /* this doesn't happen until the image has finished successfully loading */
-      if(image_buf == null) {
-          console.log("unable to load image");
-          throw "image failed to load";
-      }
-
-      /* define rectangles which determine how much data to copy */
-      src = {x:0,y:0,w:image_buf.w, h:image_buf.h};
-      dest = {x:0,y:0,w:image_buf.w, h:image_buf.h};
-
-      /* draw bitmap to screen */
-      PIX.PIX_BlitSurface(image,src,screen,dest);
-
-      /* update canvas */
-      PIX.PIX_UpdateRect(screen);
-
-      /* wait 3 seconds */
-      PIX.PIX_Delay(3000);
-
-      /* free up memory allocated to the bitmap */
-      PIX.PIX_FreeSurface(image_buf);
-
-  </script>
+  <script language="javascript" src="sprite.js"></script>
+  <script language="javascript" src="warrior.js"></script>
 </body>
 </html>

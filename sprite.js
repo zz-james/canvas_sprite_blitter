@@ -1,10 +1,49 @@
-/**
- * Project: Canvas Sprite Blitter
- * User: james
- * Date: 06/05/13
- * Time: 20:31
- */
 "use strict";
+
+
+var PIX = (function (my) {
+
+    /**
+     * This function initializes a sprite with the params sent
+     *
+     * @param x
+     * @param y
+     * @param ac
+     * @param as
+     * @param mc
+     * @param ms
+     */
+    my.SURF_NewSprite = function(x,y,ac,as,mc,ms) {
+
+        var sprite = {
+            x            : x,
+            y            : y,
+            x_old        : x,
+            y_old        : y,
+            x_tile       : (x >> 5),
+            y_tile       : (y >> 5),
+            width        : SPRITE_WIDTH,
+            height       : SPRITE_HEIGHT,
+            anim_clock   : ac,
+            anim_speed   : as,
+            motion_clock : mc,
+            motion_speed : ms,
+            curr_frame   : 0,
+            state        : SPRITE_DEAD,
+            num_frames   : 0,
+            background   : new Uint32Array(SPRITE_WIDTH * SPRITE_HEIGHT), //32 bit so use normal sprite_width
+            frames: []
+        };
+
+        return sprite;
+    };
+
+
+    return my;
+}(PIX));
+
+
+
 
 // G L O B A L S  ////////////////////////////////////////////////////////////
 
