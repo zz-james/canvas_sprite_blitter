@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/background.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/particle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas.html" afterPath="$PROJECT_DIR$/canvas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/surfaces.js" afterPath="$PROJECT_DIR$/surfaces.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warrior.js" afterPath="$PROJECT_DIR$/warrior.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="canvas_sprite_blitter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377250758486" ignored="false" />
+    <file path="/Dummy.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377294528867" ignored="false" />
     <file path="/sprite.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377205083327" ignored="false" />
     <file path="/tile_scrolling_robo.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1372592115536" ignored="false" />
     <file path="/canvas.html" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377273732977" ignored="false" />
@@ -22,7 +17,7 @@
     <file path="/image.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377200017294" ignored="false" />
     <file path="/DummyFile.xpath" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377095697711" ignored="false" />
     <file path="/blit_test2.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377200062424" ignored="false" />
-    <file path="/warrior.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377275160905" ignored="false" />
+    <file path="/warrior.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377295723072" ignored="false" />
     <file path="/particle.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377257148381" ignored="false" />
     <file path="/keys.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377273803438" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,10 +61,7 @@
         <entry file="file://$PROJECT_DIR$/particle.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="127" column="7" selection-start="4175" selection-end="4203" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#84#240#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,7 +69,7 @@
       <file leaf-file-name="warrior.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/warrior.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="70" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.64593303">
+            <state line="1" column="33" selection-start="37" selection-end="37" vertical-scroll-proportion="0.03797468">
               <folding />
             </state>
           </provider>
@@ -95,7 +87,7 @@
       <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/canvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="46" selection-start="963" selection-end="963" vertical-scroll-proportion="-13.916667">
+            <state line="23" column="46" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,7 +96,7 @@
       <file leaf-file-name="keys.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keys.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="23" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
+            <state line="1" column="0" selection-start="4" selection-end="37" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -208,16 +200,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="fileTemplates" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="fileTemplates" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/canvas.html" />
     <property name="JavaScriptPreferStrict" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -357,7 +349,11 @@
       <created>1377211784401</created>
       <updated>1377211784401</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="starting to implement penguin warrior">
+      <created>1377276216289</created>
+      <updated>1377276216289</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -468,9 +464,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pastebin.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image.js">
@@ -480,9 +474,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pastebin.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
@@ -537,26 +529,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/keys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/particle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="127" column="7" selection-start="4175" selection-end="4203" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#84#240#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/canvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="46" selection-start="963" selection-end="963" vertical-scroll-proportion="-13.916667">
+        <state line="23" column="46" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -568,9 +550,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/keys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="4" selection-end="37" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/warrior.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="70" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.64593303">
+        <state line="1" column="33" selection-start="37" selection-end="37" vertical-scroll-proportion="0.03797468">
           <folding />
         </state>
       </provider>
