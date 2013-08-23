@@ -39,7 +39,7 @@ var PIX = (function() {
     var _surfaceWidth; // surface width in pixels
     var _surfaceHeight; // surface height in pixels
     var _mainBuffer; // surface that we can flip to canvas
-
+    var _tix = new Date().getTime();
     /**
      * initialises the pix_elf library
      * runs compatability tests returns true
@@ -69,6 +69,12 @@ var PIX = (function() {
 
     };
 
+    /**
+     * returns number of milliseconds since the library was initialised
+     */
+    my.SURF_GetTicks = function() {
+        return new Date().getTime() -  _tix;
+    };
 
     /**
      * gets a pionter to the video buffer. this data will sync to canvas

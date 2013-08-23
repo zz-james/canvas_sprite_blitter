@@ -2,36 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back-stars.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fighter.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front-stars.bmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nbackground.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/smallpenguin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blit_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blit_test2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pastebin.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/warrior.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OUTPOST.png" afterPath="$PROJECT_DIR$/OUTPOST.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ROBOPUNK.png" afterPath="$PROJECT_DIR$/ROBOPUNK.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/background.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/keys.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/particle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas.html" afterPath="$PROJECT_DIR$/canvas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image.js" afterPath="$PROJECT_DIR$/image.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sprite.js" afterPath="$PROJECT_DIR$/sprite.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/surfaces.js" afterPath="$PROJECT_DIR$/surfaces.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warrior.js" afterPath="$PROJECT_DIR$/warrior.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="canvas_sprite_blitter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377198887528" ignored="false" />
+    <file path="/Dummy.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377250758486" ignored="false" />
     <file path="/sprite.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377205083327" ignored="false" />
     <file path="/tile_scrolling_robo.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1372592115536" ignored="false" />
-    <file path="/canvas.html" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377205019635" ignored="false" />
-    <file path="/surfaces.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377202429977" ignored="false" />
+    <file path="/canvas.html" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377273732977" ignored="false" />
+    <file path="/surfaces.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377271815637" ignored="false" />
     <file path="/SDL_API_LIST.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376941888275" ignored="false" />
     <file path="/todo.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376945232629" ignored="false" />
     <file path="/image.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377200017294" ignored="false" />
     <file path="/DummyFile.xpath" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377095697711" ignored="false" />
     <file path="/blit_test2.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377200062424" ignored="false" />
-    <file path="/warrior.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377211468060" ignored="false" />
+    <file path="/warrior.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377275160905" ignored="false" />
+    <file path="/particle.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377257148381" ignored="false" />
+    <file path="/keys.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377273803438" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +43,74 @@
     <favorites_list name="canvas_sprite_blitter" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="background.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/background.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="47" selection-start="3560" selection-end="3575" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="0" selection-start="2518" selection-end="2541" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="particle.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/particle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="127" column="7" selection-start="4175" selection-end="4203" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#84#240#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="warrior.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/warrior.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="70" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.64593303">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="surfaces.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/surfaces.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="7" selection-start="3049" selection-end="3068" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/canvas.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="46" selection-start="963" selection-end="963" vertical-scroll-proportion="-13.916667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keys.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/keys.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="23" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -74,8 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/robopunk.js" />
-        <option value="$PROJECT_DIR$/buffer.js" />
         <option value="$PROJECT_DIR$/tile_scrolling.js" />
         <option value="$PROJECT_DIR$/tile.js" />
         <option value="$PROJECT_DIR$/tile_scrolling_robo.js" />
@@ -84,11 +142,13 @@
         <option value="$PROJECT_DIR$/pastebin.txt" />
         <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/blit_test.js" />
-        <option value="$PROJECT_DIR$/image.js" />
         <option value="$PROJECT_DIR$/blit_test2.js" />
-        <option value="$PROJECT_DIR$/surfaces.js" />
         <option value="$PROJECT_DIR$/sprite.js" />
+        <option value="$PROJECT_DIR$/image.js" />
+        <option value="$PROJECT_DIR$/particle.js" />
+        <option value="$PROJECT_DIR$/surfaces.js" />
         <option value="$PROJECT_DIR$/canvas.html" />
+        <option value="$PROJECT_DIR$/keys.js" />
         <option value="$PROJECT_DIR$/warrior.js" />
       </list>
     </option>
@@ -148,16 +208,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="fileTemplates" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="appearance" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/canvas.html" />
     <property name="JavaScriptPreferStrict" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -293,7 +353,11 @@
       <created>1377016392134</created>
       <updated>1377016392134</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="starting to implement penguin warrior">
+      <created>1377211784401</created>
+      <updated>1377211784401</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -302,9 +366,8 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8112033" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.63692945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1953125" sideWeight="0.36307055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18681319" sideWeight="0.36307055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39834026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987553" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -313,6 +376,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.63692945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -362,7 +426,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="this does not make sense at the moment it is a work in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting to implement penguin warrior" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -390,6 +454,7 @@
     <MESSAGE value="not begin the transform this into a library with a decent interface" />
     <MESSAGE value="now begin the transform this into a library with a decent interface" />
     <MESSAGE value="this does not make sense at the moment it is a work in progress" />
+    <MESSAGE value="starting to implement penguin warrior" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -401,34 +466,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/canvas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/surfaces.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="36" selection-start="2506" selection-end="2506" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="0" selection-start="2671" selection-end="2787" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDL_API_LIST.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="43" selection-end="51" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pastebin.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0">
@@ -455,40 +492,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SDL_API_LIST.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="43" selection-end="51" vertical-scroll-proportion="0.0" />
+        <state line="2" column="34" selection-start="43" selection-end="51" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blit_test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="861" selection-end="896" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blit_test2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="29" selection-start="2266" selection-end="2266" vertical-scroll-proportion="0.40789473">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/surfaces.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="4" selection-start="3019" selection-end="3037" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="0" selection-start="2533" selection-end="2541" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warrior.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="63" selection-start="5524" selection-end="5524" vertical-scroll-proportion="0.27631578">
           <folding />
         </state>
       </provider>
@@ -500,12 +511,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/background.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blit_test2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="478" selection-end="569" vertical-scroll-proportion="0.6264501">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="0" selection-start="2518" selection-end="2541" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="47" selection-start="3560" selection-end="3575" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="23" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/particle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="7" selection-start="4175" selection-end="4203" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#84#240#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/canvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="48" selection-start="907" selection-end="907" vertical-scroll-proportion="0.7638889">
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="23" column="46" selection-start="963" selection-end="963" vertical-scroll-proportion="-13.916667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/surfaces.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="7" selection-start="3049" selection-end="3068" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warrior.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="70" selection-start="3029" selection-end="3029" vertical-scroll-proportion="0.64593303">
+          <folding />
         </state>
       </provider>
     </entry>
