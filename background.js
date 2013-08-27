@@ -55,8 +55,7 @@ var back_tiles  = createArray(PARALLAX_GRID_WIDTH, PARALLAX_GRID_HEIGHT);
  */
 var initBackground = function(){
     var x, y;
-
-    initrandom();
+   // initrandom();
     for (x = 0; x < PARALLAX_GRID_WIDTH; x++) {
         for (y = 0; y < PARALLAX_GRID_HEIGHT; y++) {
             front_tiles[x][y] = Math.random() * num_star_tiles | 0;
@@ -71,7 +70,7 @@ var initBackground = function(){
  *  world that we can see at any given time. This is usually in the
  *  vicinity of the player's ship.
  */
-var drawBackground = function(dest, camera_x, camera_y){
+var DrawBackground = function(dest, camera_x, camera_y){
     var draw_x, draw_y;		/* drawing position on the screen */
     var start_draw_x, start_draw_y;
 
@@ -79,11 +78,11 @@ var drawBackground = function(dest, camera_x, camera_y){
     var start_tile_x, start_tile_y;
 
     /* Map the camera position into tile indices. */
-    start_tile_x = ((camera_x / PARALLAX_BACK_FACTOR) / TILE_WIDTH) % PARALLAX_GRID_WIDTH;
-    start_tile_y = ((camera_y / PARALLAX_BACK_FACTOR) / TILE_HEIGHT) % PARALLAX_GRID_HEIGHT;
+    start_tile_x = ((camera_x / PARALLAX_BACK_FACTOR) / TILE_WIDTH) % PARALLAX_GRID_WIDTH | 0; //int
+    start_tile_y = ((camera_y / PARALLAX_BACK_FACTOR) / TILE_HEIGHT) % PARALLAX_GRID_HEIGHT | 0; //int
 
-    start_draw_x = -((camera_x / PARALLAX_BACK_FACTOR) % TILE_WIDTH);
-    start_draw_y = -((camera_y / PARALLAX_BACK_FACTOR) % TILE_HEIGHT);
+    start_draw_x = -((camera_x / PARALLAX_BACK_FACTOR) % TILE_WIDTH) | 0; //int
+    start_draw_y = -((camera_y / PARALLAX_BACK_FACTOR) % TILE_HEIGHT) | 0; //int
 
     /* Use nested loops to scan down the screen, drawing rows of tiles. */
     tile_y = start_tile_y;
@@ -104,7 +103,7 @@ var drawBackground = function(dest, camera_x, camera_y){
             destrect.w = TILE_WIDTH;
             destrect.h = TILE_HEIGHT;
 
-            PIX.SURF_BlitCanvas(back_star_tiles, srcrect, destrect);
+            PIX.SURF_BlitCanvas(back_star_tiles.surface, srcrect, destrect);
 
             tile_x++;
             tile_x %= PARALLAX_GRID_WIDTH;
@@ -119,7 +118,7 @@ var drawBackground = function(dest, camera_x, camera_y){
 /**
  * Same as above, but draws the upper (parallaxing) layer of the background.
  */
-void DrawParallax(dest, camera_x, camera_y)
+var DrawParallax = function(dest, camera_x, camera_y)
 {
     var draw_x, draw_y;		/* drawing position on the screen */
     var start_draw_x, start_draw_y;
@@ -128,11 +127,11 @@ void DrawParallax(dest, camera_x, camera_y)
     var start_tile_x, start_tile_y;
 
     /* Map the camera position into tile indices. */
-    start_tile_x = ((camera_x / PARALLAX_FRONT_FACTOR) / TILE_WIDTH) % PARALLAX_GRID_WIDTH;
-    start_tile_y = ((camera_y / PARALLAX_FRONT_FACTOR) / TILE_HEIGHT) % PARALLAX_GRID_HEIGHT;
+    start_tile_x = ((camera_x / PARALLAX_FRONT_FACTOR) / TILE_WIDTH) % PARALLAX_GRID_WIDTH | 0;
+    start_tile_y = ((camera_y / PARALLAX_FRONT_FACTOR) / TILE_HEIGHT) % PARALLAX_GRID_HEIGHT | 0;
 
-    start_draw_x = -((camera_x / PARALLAX_FRONT_FACTOR) % TILE_WIDTH);
-    start_draw_y = -((camera_y / PARALLAX_FRONT_FACTOR) % TILE_HEIGHT);
+    start_draw_x = -((camera_x / PARALLAX_FRONT_FACTOR) % TILE_WIDTH) | 0;
+    start_draw_y = -((camera_y / PARALLAX_FRONT_FACTOR) % TILE_HEIGHT) | 0;
 
     /* Use nested loops to scan down the screen, drawing rows of tiles. */
     tile_y = start_tile_y;
@@ -152,7 +151,7 @@ void DrawParallax(dest, camera_x, camera_y)
             destrect.w = TILE_WIDTH;
             destrect.h = TILE_HEIGHT;
 
-            PIX.SURF_BlitCanvas(front_star_tiles, srcrect, destrect);
+            PIX.SURF_BlitCanvas(front_star_tiles.surface, srcrect, destrect);
 
             tile_x++;
             tile_x %= PARALLAX_GRID_WIDTH;
