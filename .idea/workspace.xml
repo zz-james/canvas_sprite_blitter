@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="">
+    <list default="true" id="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" name="Default" comment="&#10;something, but particle system not working">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fighter.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/background.js" afterPath="$PROJECT_DIR$/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas.html" afterPath="$PROJECT_DIR$/canvas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/particle.js" afterPath="$PROJECT_DIR$/particle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/surfaces.js" afterPath="$PROJECT_DIR$/surfaces.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warrior.js" afterPath="$PROJECT_DIR$/warrior.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="canvas_sprite_blitter.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377618482939" ignored="false" />
+    <file path="/Dummy.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377717880565" ignored="false" />
     <file path="/sprite.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377205083327" ignored="false" />
     <file path="/tile_scrolling_robo.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1372592115536" ignored="false" />
     <file path="/canvas.html" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377543473921" ignored="false" />
-    <file path="/surfaces.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377271815637" ignored="false" />
+    <file path="/surfaces.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377697326887" ignored="false" />
     <file path="/SDL_API_LIST.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376941888275" ignored="false" />
     <file path="/todo.txt" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1376945232629" ignored="false" />
     <file path="/image.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377200017294" ignored="false" />
     <file path="/DummyFile.xpath" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377095697711" ignored="false" />
     <file path="/blit_test2.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377200062424" ignored="false" />
-    <file path="/warrior.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377619919512" ignored="false" />
-    <file path="/particle.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377257148381" ignored="false" />
+    <file path="/warrior.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377699762871" ignored="false" />
+    <file path="/particle.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377702869309" ignored="false" />
     <file path="/keys.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377273803438" ignored="false" />
-    <file path="/background.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377619209091" ignored="false" />
+    <file path="/background.js" changelist="6988f1a8-b7be-46a8-9e80-8a0c93b9eea6" time="1377689763208" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,55 +44,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="background.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/background.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="4" selection-start="3995" selection-end="3995" vertical-scroll-proportion="0.5889146">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="87" selection-start="2318" selection-end="2330" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="particle.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/particle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="7" selection-start="4175" selection-end="4203" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="warrior.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/warrior.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="329" column="8" selection-start="9745" selection-end="9745" vertical-scroll-proportion="0.0">
+            <state line="318" column="33" selection-start="9480" selection-end="9486" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="surfaces.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/surfaces.js">
+      <file leaf-file-name="particle.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/particle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="7" selection-start="3049" selection-end="3068" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/canvas.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="40" selection-start="1194" selection-end="1194" vertical-scroll-proportion="-16.875">
+            <state line="81" column="22" selection-start="2412" selection-end="2412" vertical-scroll-proportion="0.035714287">
               <folding />
             </state>
           </provider>
@@ -139,19 +105,20 @@
         <option value="$PROJECT_DIR$/blit_test2.js" />
         <option value="$PROJECT_DIR$/sprite.js" />
         <option value="$PROJECT_DIR$/image.js" />
-        <option value="$PROJECT_DIR$/particle.js" />
-        <option value="$PROJECT_DIR$/surfaces.js" />
         <option value="$PROJECT_DIR$/keys.js" />
         <option value="$PROJECT_DIR$/canvas.html" />
-        <option value="$PROJECT_DIR$/warrior.js" />
         <option value="$PROJECT_DIR$/background.js" />
+        <option value="$PROJECT_DIR$/warrior.js" />
+        <option value="$PROJECT_DIR$/surfaces.js" />
+        <option value="$PROJECT_DIR$/particle.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
-    <option name="width" value="1024" />
-    <option name="height" value="576" />
+    <option name="x" value="-1" />
+    <option name="y" value="-4" />
+    <option name="width" value="1026" />
+    <option name="height" value="605" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -179,7 +146,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,6 +166,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -360,17 +327,21 @@
       <created>1377295814315</created>
       <updated>1377295814315</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="ok coming together, obviously still some problems. Hope to implement a image loaded that bypasses the image object and straight loads binary data into a typed array (digoo stashed xhr object tut)">
+      <created>1377620276543</created>
+      <updated>1377620276543</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1024" height="576" extended-state="6" />
+    <frame x="-1" y="-4" width="1026" height="605" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8112033" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18581419" sideWeight="0.36307055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18581419" sideWeight="0.36307055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39834026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32987553" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -429,7 +400,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting to implement penguin warrior" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok coming together, obviously still some problems. Hope to implement a image loaded that bypasses the image object and straight loads binary data into a typed array (digoo stashed xhr object tut)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -458,6 +429,7 @@
     <MESSAGE value="now begin the transform this into a library with a decent interface" />
     <MESSAGE value="this does not make sense at the moment it is a work in progress" />
     <MESSAGE value="starting to implement penguin warrior" />
+    <MESSAGE value="ok coming together, obviously still some problems. Hope to implement a image loaded that bypasses the image object and straight loads binary data into a typed array (digoo stashed xhr object tut)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -469,11 +441,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pastebin.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="81" column="0" selection-start="2671" selection-end="2787" vertical-scroll-proportion="0.0" />
@@ -509,18 +476,43 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/particle.js">
+    <entry file="file://$PROJECT_DIR$/blit_test2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="7" selection-start="4175" selection-end="4203" vertical-scroll-proportion="0.0">
+        <state line="127" column="8" selection-start="3515" selection-end="3542" vertical-scroll-proportion="1.1019417" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="40" selection-start="1194" selection-end="1194" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="87" selection-start="2318" selection-end="2330" vertical-scroll-proportion="0.5714286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fighter.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="148" column="43" selection-start="5135" selection-end="5135" vertical-scroll-proportion="3.3602772" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warrior.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="318" column="33" selection-start="9480" selection-end="9486" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/surfaces.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="7" selection-start="3049" selection-end="3068" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="84" column="25" selection-start="3106" selection-end="3106" vertical-scroll-proportion="0.62355655" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/keys.js">
@@ -530,37 +522,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image.js">
+    <entry file="file://$PROJECT_DIR$/particle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="87" selection-start="2318" selection-end="2330" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blit_test2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="8" selection-start="3515" selection-end="3542" vertical-scroll-proportion="1.1019417">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="40" selection-start="1194" selection-end="1194" vertical-scroll-proportion="-16.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warrior.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="329" column="8" selection-start="9745" selection-end="9745" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="4" selection-start="3995" selection-end="3995" vertical-scroll-proportion="0.5889146">
+        <state line="81" column="22" selection-start="2412" selection-end="2412" vertical-scroll-proportion="0.035714287">
           <folding />
         </state>
       </provider>

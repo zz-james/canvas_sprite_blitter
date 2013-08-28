@@ -59,7 +59,7 @@ var PIX = (function() {
         // otherwise
 
 
-        // _imageData = _ctx.getImageData(0, 0, w, h);
+        _imageData = _ctx.getImageData(0, 0, w, h);
         _byteSurfaceWidth = w << 2; // w * 4
         _surfaceHeight = h;
         _surfaceWidth = w;
@@ -82,7 +82,7 @@ var PIX = (function() {
      * @returns {ArrayBuffer}
      */
     my.SURF_GetMainSurface = function() {
-        return _mainBuffer;
+        return _imageData;
     };
 
 
@@ -104,7 +104,7 @@ var PIX = (function() {
      * @constructor
      */
     my.SURF_BlitCanvas = function(src_surface, src, dest) {
-        _ctx.putImageData(src_surface, dest.x, dest.y, src.x, src.y, src.w, src.h)
+        _ctx.putImageData(src_surface, dest.x, dest.y, src.x, src.y, src.w, src.h);
     };
 
     /**
@@ -116,7 +116,7 @@ var PIX = (function() {
      * @constructor
      */
     my.SURF_DrawToCanvas = function(src_surface, src, dest) {
-        _ctx.drawImage(src_surface, src.x,src.x, src.w,src.h, dest.x,dest.y, dest.w,dest.h);
+        _ctx.drawImage(src_surface, src.x,src.y, src.w,src.h, dest.x,dest.y, dest.w,dest.h);
     };
 
 

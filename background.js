@@ -98,7 +98,7 @@ var DrawBackground = function(dest, camera_x, camera_y){
             srcrect.w = TILE_WIDTH;
             srcrect.h = TILE_HEIGHT;
 
-            destrect.x = draw_x;
+            destrect.x = draw_x - srcrect.x ;
             destrect.y = draw_y;
             destrect.w = TILE_WIDTH;
             destrect.h = TILE_HEIGHT;
@@ -146,7 +146,7 @@ var DrawParallax = function(dest, camera_x, camera_y)
             srcrect.y = 0;
             srcrect.w = TILE_WIDTH;
             srcrect.h = TILE_HEIGHT;
-            destrect.x = draw_x;
+            destrect.x = draw_x - srcrect.x;
             destrect.y = draw_y;
             destrect.w = TILE_WIDTH;
             destrect.h = TILE_HEIGHT;

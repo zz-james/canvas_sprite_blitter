@@ -108,7 +108,7 @@ var onImagesLoaded = function() {
     //SDL_SetColorKey(tmp, SDL_SRCCOLORKEY | SDL_RLEACCEL, 0);
     /* Initialize the background starfield. */
     initBackground();
-    alert('boo');
+
     /* Play! */
     InitPlayer();
     InitOpponent();
@@ -122,7 +122,7 @@ var turn;        // int
 var prev_ticks, cur_ticks = 0; /* for keeping track of timing (int)*/
 /* framerate counter variables */
 var start_time, end_time;   // int
-var frames_drawn = 0;        // int
+var frames_drawn;        // int
 
 /* ----------------------------------------------------------------------- */
 
@@ -244,7 +244,7 @@ var PlayGame = function()
     prev_ticks = PIX.SURF_GetTicks(); // experiment!
 
     start_time = new Date().getTime();
-
+    frames_drawn = 0;
     requestAnimFrame(mainLoop);
 };
 
@@ -260,9 +260,6 @@ var mainLoop = function() {
     cur_ticks = PIX.SURF_GetTicks();
     time_scale = (cur_ticks-prev_ticks)/30.0;
 
-    /* Update SDL's internal input state information. */
-    // SDL_PumpEvents();  dont need?
-
     /* Grab a snapshot of the keyboard. */
     keystate = PIX.KEY_GetKeyState();
 
@@ -271,8 +268,8 @@ var mainLoop = function() {
 
     /* Left and right arrow keys control turning. */
     turn = 0;
-    if (keystate[37]) turn += 15;       /* left arrow */
-    if (keystate[39]) turn -= 15;       /* right arrow */
+    if (keystate[37]) turn += 12;       /* left arrow */
+    if (keystate[39]) turn -= 12;       /* right arrow */
 
     /* Forward and back arrow keys activate thrusters. */
     player.accel = 0;
@@ -293,7 +290,7 @@ var mainLoop = function() {
     }
 
     /* Allow a turn of four degrees per frame. */
-    player.angle += turn * time_scale;
+    player.angle += turn; // * time_scale;
     if (player.angle < 0) player.angle += 360;
     if (player.angle >= 360) player.angle -= 360;
 
@@ -316,25 +313,27 @@ var mainLoop = function() {
     PIX.PART_UpdateParticles();
 
     /* Redraw everything. */
-    DrawBackground(screen, camera_x, camera_y);
+    DrawBackground(screen, 0, 0);
     DrawParallax(screen, camera_x, camera_y);
 
     PIX.PART_DrawParticles(screen, camera_x, camera_y);
     DrawPlayer(player);
-    DrawPlayer(opponent);
+    //DrawPlayer(opponent);
 
     /* Flip the page. */
     //  SDL_Flip(screen);
 
     frames_drawn++;
+
     if(!quit){
         requestAnimFrame(mainLoop);
     } else {
         end_time = new Date().getTime();
+        var runtime = end_time-start_time;
         if (start_time == end_time) end_time++;
 
         /* Display the average framerate. */
-        console.log("Drew "+frames_drawn+" frames in "+end_time-start_time+" seconds, for a framerate of "+frames_drawn/(end_time-start_time)+" fps.\n");
+        console.log("Drew "+frames_drawn+" frames in "+runtime+" seconds, for a framerate of "+frames_drawn/(end_time-start_time)+" fps.\n");
 
     }
 

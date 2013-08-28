@@ -63,15 +63,15 @@ var PIX = (function (my) {
         var i;
         var pixels;
 
-       // pixels = (Uint16 *) dest->pixels; get the surface data buffer?
+        pixels =  dest.data; // get the surface data buffer?
 
         for (i = 0; i < active_particles; i++) {
             var x, y;
             var color; // ensure this is a 4 byte value
 
             /* Convert world coords to screen coords. */
-            x = particles[i].x - camera_x;
-            y = particles[i].y - camera_y;
+            x = (particles[i].x - camera_x) | 0;
+            y = (particles[i].y - camera_y) | 0;
             if ((x < 0) || (x >= SCREEN_WIDTH))
                 continue;
             if ((y < 0) || (y >= SCREEN_HEIGHT))
@@ -79,10 +79,10 @@ var PIX = (function (my) {
 
             /* Find the color of this particle. */
             // not sure about this as yet
-            color = CreateHicolorPixel(particles[i].r, particles[i].g, particles[i].b);
+            color = 0xFFFFFFFF;// CreateHicolorPixel(particles[i].r, particles[i].g, particles[i].b);
 
             /* Draw the particle. */
-            pixels[(dest.width /*bear in mind pix/byte conversion*/ ) * y + x] = color;
+            pixels[(dest.width << 2 /*bear in mind pix/byte conversion*/ * y) + x] = color;
         }
 
     };
@@ -95,8 +95,8 @@ var PIX = (function (my) {
         var i;
 
         for (i = 0; i < active_particles; i++) {
-            particles[i].x += particles[i].energy * Math.cos(particles[i].angle * Math.PI / 180.0) * time_scale;
-            particles[i].y += particles[i].energy *-Math.sin(particles[i].angle * Math.PI / 180.0) * time_scale;
+            particles[i].x += particles[i].energy * Math.cos(particles[i].angle * Math.PI / 180.0); // * time_scale;
+            particles[i].y += particles[i].energy *-Math.sin(particles[i].angle * Math.PI / 180.0); // * time_scale;
 
             /* Fade the particle's color. */
             particles[i].r--;
