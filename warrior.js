@@ -285,8 +285,9 @@ var mainLoop = function() {
      This has absolutely no effect on the game. */
     if (keystate[69]) {    /* e */
         PIX.PART_CreateParticleExplosion(player.world_x, player.world_y, 255, 255, 255, 10, 300);
-        PIX.PART_CreateParticleExplosion(player.world_x, player.world_y, 255, 0, 0, 5, 100);
-        PIX.PART_CreateParticleExplosion(player.world_x, player.world_y, 255, 255, 0, 2, 50);
+        //PIX.PART_CreateParticleExplosion(player.world_x, player.world_y, 255, 0, 0, 5, 100);
+        //PIX.PART_CreateParticleExplosion(player.world_x, player.world_y, 255, 255, 0, 2, 50);
+        delete keystate[69];
     }
 
     /* Allow a turn of four degrees per frame. */
@@ -315,10 +316,10 @@ var mainLoop = function() {
     /* Redraw everything. */
     DrawBackground(screen, 0, 0);
     DrawParallax(screen, camera_x, camera_y);
-
-    PIX.PART_DrawParticles(screen, camera_x, camera_y);
     DrawPlayer(player);
-    //DrawPlayer(opponent);
+    PIX.PART_DrawParticles(screen, camera_x, camera_y);
+
+    DrawPlayer(opponent);
 
     /* Flip the page. */
     //  SDL_Flip(screen);
