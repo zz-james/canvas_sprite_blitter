@@ -1,10 +1,49 @@
-/**
- * Project: Canvas Sprite Blitter
- * User: james
- * Date: 06/05/13
- * Time: 20:31
- */
 "use strict";
+
+
+var PIX = (function (my) {
+
+    /**
+     * This function initializes a sprite with the params sent
+     *
+     * @param x
+     * @param y
+     * @param ac
+     * @param as
+     * @param mc
+     * @param ms
+     */
+    my.SURF_NewSprite = function(x,y,ac,as,mc,ms) {
+
+        var sprite = {
+            x            : x,
+            y            : y,
+            x_old        : x,
+            y_old        : y,
+            x_tile       : (x >> 5),
+            y_tile       : (y >> 5),
+            width        : SPRITE_WIDTH,
+            height       : SPRITE_HEIGHT,
+            anim_clock   : ac,
+            anim_speed   : as,
+            motion_clock : mc,
+            motion_speed : ms,
+            curr_frame   : 0,
+            state        : SPRITE_DEAD,
+            num_frames   : 0,
+            background   : new Uint32Array(SPRITE_WIDTH * SPRITE_HEIGHT), //32 bit so use normal sprite_width
+            frames: []
+        };
+
+        return sprite;
+    };
+
+
+    return my;
+}(PIX));
+
+
+
 
 // G L O B A L S  ////////////////////////////////////////////////////////////
 
@@ -13,8 +52,10 @@ var SPRITE_DEAD = 0;
 var SPRITE_ALIVE = 1;
 var SPRITE_DYING = 2;
 
-var SPRITE_WIDTH;
-var SPRITE_HEIGHT;
+// declared in image.js
+var SPRITE_WIDTH = 32;
+var SPRITE_HEIGHT = 32;
+var byte_SPRITE_WIDTH = SPRITE_WIDTH * 4; // 4 bytes per pixel.
 
 /**
  * This function initializes a sprite with the sent data
@@ -34,6 +75,8 @@ var spriteFactory = function(x,y,ac,as,mc,ms)
         y            : y,
         x_old        : x,
         y_old        : y,
+        x_tile       : (x >> 5),
+        y_tile       : (y >> 5),
         width        : SPRITE_WIDTH,
         height       : SPRITE_HEIGHT,
         anim_clock   : ac,
@@ -43,8 +86,8 @@ var spriteFactory = function(x,y,ac,as,mc,ms)
         curr_frame   : 0,
         state        : SPRITE_DEAD,
         num_frames   : 0,
-        background   : new Uint32Array(SPRITE_WIDTH * SPRITE_HEIGHT),
-        frames: new Array()
+        background   : new Uint32Array(SPRITE_WIDTH * SPRITE_HEIGHT), //32 bit so use normal sprite_width
+        frames: []
     };
 
     return sprite;
@@ -52,9 +95,10 @@ var spriteFactory = function(x,y,ac,as,mc,ms)
 
 
 /**
- * This function will grap a bitmap from the picture object buffer. it uses the
+ * This function will grab a bitmap from the picture object buffer. it uses the
  * convention that the 320x200 pixel matrix is sub divided into a smaller
  * matrix of nxn adjacent squares of size SPRITE_HEIGHT X SPRITE_WIDTH
+ * buffers are 32 bit so use normal sprite_width
  * @param picture - picture object
  * @param sprite - sprite object
  * @param frame - index of 'frames' in the sprite object
@@ -95,31 +139,29 @@ var spriteGrabBitmap = function(picture, sprite, frame, grab_x, grab_y) {
 };
 
 /**
- * this function draws a sprite on the screen row by row very quickly
+ * this function draws a sprite on the screen checks for 0 and if found does not draw
  * @param sprite - sprite object to draw - the frame drawn depends on the sprite.curr_frame value
  */
 var drawSprite = function(sprite) {
 
-    var work_sprite;
+    var work_img;
     var work_offset=0,offset,x,y;
     var data;
 
-    // get a pointer to pixel buffer
-    work_sprite = sprite.frames[sprite.curr_frame];
+    // get a pointer to frame img buffer
+    work_img = sprite.frames[sprite.curr_frame];
 
     // compute offset of sprite in video buffer
     offset = (sprite.y * 320) + sprite.x;
-
-    //memcpy(dst, dstOffset, src, srcOffset, length)
 
     for (y=0; y<SPRITE_HEIGHT; y++)
     {
         for (x=0; x<SPRITE_WIDTH; x++)
         {
             // test for transparent pixel i.e. 0, if not transparent then draw
-            data=work_sprite[work_offset+x];
+            data=work_img[work_offset+x];
             if (data) {
-                RGB_VIEW[offset+x] = data;
+                RGB_VIEW[offset+x] = data; // 32 bit buffer
             }
         }
 
@@ -144,23 +186,18 @@ var behindSprite = function(sprite) {
     work_back = sprite.background.buffer;
 
     // compute offset of background in video buffer
-    offset = (sprite.y * 320 * 4) + sprite.x * 4;
-    var sprite_byte_width = SPRITE_WIDTH * 4;
-    var screen_byte_width = SCREEN_WIDTH * 4;
+    offset = (sprite.y * byte_SCREEN_WIDTH) + (sprite.x * 4); // sprite.x converted to bytes
 
     for (y=0; y<SPRITE_HEIGHT; y++)
     {
         // copy the next row out off screen buffer into sprite background buffer
-
-        memcpy(work_back, work_offset, VIDEO_BUFFER, offset , sprite_byte_width);
+        memcpy(work_back, work_offset, VIDEO_BUFFER, offset , byte_SPRITE_WIDTH);
 
         // move to next line in video buffer and in sprite background buffer
-
-        offset      += screen_byte_width;
-        work_offset += sprite_byte_width;
+        offset      += byte_SCREEN_WIDTH;
+        work_offset += byte_SPRITE_WIDTH;
 
     } // end for y
-    var a = true;
 };
 
 /**
@@ -178,18 +215,16 @@ var eraseSprite = function(sprite) {
     work_back = sprite.background.buffer;
 
     // compute offset of background in video buffer
-    offset = (sprite.y * 320 * 4) + sprite.x * 4;
-    var sprite_byte_width = SPRITE_WIDTH * 4;
-    var screen_byte_width = SCREEN_WIDTH * 4;
+    offset = (sprite.y * byte_SCREEN_WIDTH) + (sprite.x * 4); //sprite x converted to bytes
 
     for (y=0; y<SPRITE_HEIGHT; y++)
     {
         // copy the next row out off screen buffer into sprite background buffer
-        memcpy(VIDEO_BUFFER,offset,work_back,work_offset,sprite_byte_width);
+        memcpy(VIDEO_BUFFER,offset,work_back,work_offset,byte_SPRITE_WIDTH);
 
         // move to next line in video buffer and in sprite background buffer
-        offset      += screen_byte_width;
-        work_offset += sprite_byte_width;
+        offset      += byte_SCREEN_WIDTH;
+        work_offset += byte_SPRITE_WIDTH;
     }
 };
 

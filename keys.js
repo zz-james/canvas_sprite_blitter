@@ -1,18 +1,29 @@
 /**
- * Project: Canvas Sprite Blitter
+ * Project: canvas_sprite_blitter
  * User: james
- * Date: 06/05/13
- * Time: 18:37
+ * Date: 23/08/13
+ * Time: 16:56
  */
 "use strict";
 
-var pressed={};
-document.onkeydown=function(e){
-    e = e || window.event;
-    pressed[e.keyCode] = true;
-};
+var PIX = (function (my) {
 
-document.onkeyup=function(e){
-    e = e || window.event;
-    delete pressed[e.keyCode];
-};
+    var pressed={};
+
+    document.onkeydown=function(e){
+        e = e || window.event;
+        pressed[e.keyCode] = true;
+    };
+
+    document.onkeyup=function(e){
+        e = e || window.event;
+        delete pressed[e.keyCode];
+    };
+
+    my.KEY_GetKeyState = function() {
+        return pressed;
+    };
+    /* usage eg if(pressed[37]) {} */
+
+    return my;
+}(PIX));
