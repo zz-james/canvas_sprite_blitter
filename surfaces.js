@@ -33,12 +33,12 @@ var PIX = (function() {
     var _error = ''; // error message string
     /* boolean to determine endianness */
     var _little_endian = new Int8Array(new Int16Array([1]).buffer)[0] > 0;
-    var _ctx; // holds context object
-    var _imageData; // typed array holding context image data
+    var _ctx;              // holds context object
+    var _imageData;        // typed array holding context image data
     var _byteSurfaceWidth; // surface width in bytes is 4 x width in pixels as each pixel is 4 bytes
-    var _surfaceWidth; // surface width in pixels
-    var _surfaceHeight; // surface height in pixels
-    var _mainBuffer; // surface that we can flip to canvas
+    var _surfaceWidth;     // surface width in pixels
+    var _surfaceHeight;    // surface height in pixels
+    var _mainBuffer;       // surface that we can flip to canvas
     var _tix = new Date().getTime();
     /**
      * initialises the pix_elf library
@@ -59,11 +59,11 @@ var PIX = (function() {
         // otherwise
 
 
-        _imageData = _ctx.getImageData(0, 0, w, h);
+        _imageData        = _ctx.getImageData(0, 0, w, h);
         _byteSurfaceWidth = w << 2; // w * 4
-        _surfaceHeight = h;
-        _surfaceWidth = w;
-        _mainBuffer =  new ArrayBuffer(_byteSurfaceWidth * _surfaceHeight);
+        _surfaceHeight    = h;
+        _surfaceWidth     = w;
+        _mainBuffer       =  new ArrayBuffer(_byteSurfaceWidth * _surfaceHeight);
         // and return true
         return true;
 
