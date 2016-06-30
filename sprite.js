@@ -20,7 +20,7 @@ var PIX = (function (my) {
             y            : y,
             x_old        : x,
             y_old        : y,
-            x_tile       : (x >> 5),
+            x_tile       : (x >> 5),  // divide by 32
             y_tile       : (y >> 5),
             width        : SPRITE_WIDTH,
             height       : SPRITE_HEIGHT,

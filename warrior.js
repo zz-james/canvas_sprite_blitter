@@ -9,13 +9,13 @@
 
 /* --------------- DEFINE GLOBALS ---------------- */
 
-var ship_strip = PIX.SURF_NewSurface();  /* rotating ship in 2-degree increments */
-var front_star_tiles = PIX.SURF_NewSurface();	/* for the parallaxing star layer */
-var back_star_tiles = PIX.SURF_NewSurface();	/* for the star background */
-var num_star_tiles;   /* derived from the width of the loaded strips */
+var ship_strip       = PIX.SURF_NewSurface();  /* rotating ship in 2-degree increments */
+var front_star_tiles = PIX.SURF_NewSurface();  /* for the parallaxing star layer */
+var back_star_tiles  = PIX.SURF_NewSurface();  /* for the star background */
+var num_star_tiles;  /* derived from the width of the loaded strips */
 
 /* Player data */
-var player = NewPlayer();		/* the player sitting at the local keyboard */
+var player   = NewPlayer();		/* the player sitting at the local keyboard */
 var opponent = NewPlayer();		/* scripted or networked opponent */
 
 /* The current camera position */
@@ -30,7 +30,7 @@ var screen = PIX.SURF_GetMainSurface();		/* not sure we need? */
  to run at about the same speed regardless of framerate. */
 var time_scale = 0;
 
-var game_type = "GAME_COMPUTER";
+var game_type     = "GAME_COMPUTER";
 var opponent_type = "OPP_COMPUTER";
 
 /* --------------- FUNCTIONS / HANDLERS ETC ---------------- */
@@ -59,14 +59,14 @@ function ready()
 /* Data structure for player ships */
 function NewPlayer() {
     var player_type = {
-        angle:undefined,	  /* in clockwise degrees, 0 -> due east */
-        world_x:undefined,    /* coordinates in the world (double) */
-        world_y:undefined,	  /* coordinates in the world (double) */
-        screen_x:undefined,   /* onscreen coordinates (int) */
-        screen_y:undefined,	  /* onscreen coordinates (int) */
-        velocity:undefined,	  /* velocity in pixels per frame */
-        accel:undefined,	  /* acceleration in pixels/frame^2 */
-        shields:undefined	  /* shield strength left */
+        angle    : undefined,	  /* in clockwise degrees, 0 -> due east */
+        world_x  : undefined,    /* coordinates in the world (double) */
+        world_y  : undefined,	  /* coordinates in the world (double) */
+        screen_x : undefined,   /* onscreen coordinates (int) */
+        screen_y : undefined,	  /* onscreen coordinates (int) */
+        velocity : undefined,	  /* velocity in pixels per frame */
+        accel    : undefined,	  /* acceleration in pixels/frame^2 */
+        shields  : undefined	  /* shield strength left */
     };
     return player_type;
 }
