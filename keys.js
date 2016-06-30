@@ -10,7 +10,7 @@ var PIX = (function (my) {
 
     var pressed={};
 
-    document.onkeydown=function(e){
+    document.onkeydown = function(e){
         e = e || window.event;
         pressed[e.keyCode] = true;
     };
