@@ -28,15 +28,17 @@ export const queueImage = (surface: Surface, url: string) => {
  * @param callback ; the function to call when all the images are loaded
  */
 export const loadImages = async () => {
-  const results = await Promise.all([
+  const finalResults = await Promise.all(
     bufferDataContainer.map(
-      async (bufferData) => loadImage(bufferData) // loader function that retuns a promise
-    ), // this will return an array of promises
-  ]);
-  return results;
+      async (bufferData) => await loadImage(bufferData) // loader function that retuns a promise
+    ) // this will return an array of promises
+  ).then((results) => {
+    return results;
+  });
+  return finalResults;
 };
 
-const loadImage = (bufferData: BufferData) => {
+const loadImage = async (bufferData: BufferData) => {
   return new Promise((resolve, reject) => {
     const img = bufferData.image;
     img.onload = () => {
@@ -50,7 +52,7 @@ const loadImage = (bufferData: BufferData) => {
     };
 
     img.src = img.id; // trigger the actual loading of the image
-    console.log("started loading image " + i);
+    console.log("started loading image " + img.id);
   });
 };
 
@@ -72,10 +74,3 @@ const putImageDataInBuffer = (bufferData: BufferData) => {
     height
   );
 };
-
-// var IMG_AreWeDoneYet = function () {
-//   if (_numLoadedImgs === _numImgs) {
-//     return true;
-//   }
-//   return false;
-// };

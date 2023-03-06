@@ -27,16 +27,19 @@ if (
   throw "Unable to initialize Pixelf" + SURF.getError();
 }
 
+let images;
 // load 100 images from slices folder
 for (var i = 0; i < 4; i++) {
-  IMG.queueImage(image_buf, "slices/Image" + i + ".jpg"); // this goes into a loading list
+  IMG.queueImage(image_buf, "slices/image" + i + ".jpg"); // this goes into a loading list
 }
 
 try {
-  await IMG.loadImages(); // this can be a promise.all()
+  images = await IMG.loadImages(); // this can be a promise.all()
 } catch (e) {
   throw new Error(e);
 }
+
+console.log(images);
 /* Save the screen pointer for later use. */
 // dscreen = PIX.SURF_GetMainSurface();
 
