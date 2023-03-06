@@ -156,9 +156,9 @@ export const blitCanvas = (src_surface: ImageData, src, dest) => {
 //  * frees up a surface's memory
 //  * @param image_buf
 //  */
-// my.SURF_FreeSurface = function (image_buf) {
-//   image_buf = null;
-// };
+export const freeSurface = (image_buf: Surface) => {
+  image_buf = { surface: undefined };
+};
 
 // /**
 //  * makes buffer go black
