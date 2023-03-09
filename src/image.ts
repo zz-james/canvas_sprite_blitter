@@ -1,24 +1,22 @@
+import * as SURF from "./surfaces";
 import { Surface } from "./surfaces";
 
-type BufferData = { buffer: Surface; image: HTMLImageElement };
+// type BufferData = { buffer: Surface; image: HTMLImageElement };
 
-let bufferDataContainer: BufferData[] = []; // array [{surface object, image object},...]
+// let bufferDataContainer: BufferData[] = []; // array [{surface object, image object},...]
+let images: HTMLImageElement[] = []; // array of image objects
+
 let numImgs: number;
 // let numLoadedImgs: number = 0;
 // let callback;
 // let tmpImg: HTMLImageElement = new Image(); // just have this image pointer in heap
 
-export const queueImage = (surface: Surface, url: string) => {
-  //check if 'surface' is actually a valid
-  if (!surface.hasOwnProperty("surface")) {
-    throw "not a valid surface object please ensure the surface is properly initialised using SURF_NewSurface";
-  }
-
+export const queueImage = (url: string) => {
   const img = new Image();
 
   img.id = url; // when we load we'll set src = id
-  bufferDataContainer.push({ buffer: surface, image: img });
-  numImgs = bufferDataContainer.length;
+  images.push(img);
+  numImgs = images.length;
   console.log("queueing image " + numImgs); // debug
 };
 
@@ -28,9 +26,9 @@ export const queueImage = (surface: Surface, url: string) => {
  * @param callback ; the function to call when all the images are loaded
  */
 export const loadImages = async () => {
-  const finalResults = await Promise.all(
-    bufferDataContainer.map(
-      async (bufferData) => await loadImage(bufferData) // loader function that retuns a promise
+  const finalResults: Surface[] = await Promise.all(
+    images.map(
+      async (image): Promise<Surface> => await loadImage(image) // loader function that retuns a promise
     ) // this will return an array of promises
   ).then((results) => {
     return results;
@@ -38,39 +36,18 @@ export const loadImages = async () => {
   return finalResults;
 };
 
-const loadImage = async (bufferData: BufferData) => {
+const loadImage = async (image: HTMLImageElement): Promise<Surface> => {
   return new Promise((resolve, reject) => {
-    const img = bufferData.image;
-    img.onload = () => {
-      console.log("completed loading image " + img.id);
-      putImageDataInBuffer(bufferData);
-      resolve(bufferData);
+    image.onload = () => {
+      console.log("completed loading image " + image.id);
+      resolve(SURF.createSurface(image));
     };
-    img.onerror = function (event: Event | string) {
+    image.onerror = function (event: Event | string) {
       if (typeof event === "string") reject(`there was an error ${event}`);
       reject("there was an error loading " + (event as Event).currentTarget);
     };
 
-    img.src = img.id; // trigger the actual loading of the image
-    console.log("started loading image " + img.id);
+    image.src = image.id; // trigger the actual loading of the image
+    console.log("started loading image " + image.id);
   });
-};
-
-const putImageDataInBuffer = (bufferData: BufferData) => {
-  var offscreen_canvas = document.createElement("canvas");
-  var offscreen_context = offscreen_canvas.getContext("2d")!;
-
-  const tmpImg = bufferData.image;
-  var width = tmpImg.width;
-  var height = tmpImg.height;
-  offscreen_canvas.width = width;
-  offscreen_canvas.height = height;
-  offscreen_context.drawImage(tmpImg, 0, 0);
-  // bufferData.buffer.img = tmpImg;
-  bufferData.buffer.surface = offscreen_context.getImageData(
-    0,
-    0,
-    width,
-    height
-  );
 };

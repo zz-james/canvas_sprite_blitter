@@ -20,6 +20,24 @@
  * otherwise it is false
  */
 
+export type Surface = {
+  data: Uint8ClampedArray;
+  height: number;
+  width: number;
+};
+
+export type Rect = {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+};
+
+export type Coord = {
+  x: number;
+  y: number;
+};
+
 let error: string = ""; // error message string
 /* boolean to determine endianness */
 export const little_endian: boolean =
@@ -27,23 +45,23 @@ export const little_endian: boolean =
 
 let ctx: CanvasRenderingContext2D; // holds context object
 let imageData: ImageData; // typed array holding context image data
-let byteSurfaceWidth: number; // surface width in bytes is 4 x width in pixels as each pixel is 4 bytes
+
 let surfaceWidth: number; // surface width in pixels
 let surfaceHeight: number; // surface height in pixels
 let mainBuffer: ArrayBuffer; // surface that we can flip to canvas
 let tix: number = new Date().getTime();
 
-// /**
-//  * initialises the pix_elf library
-//  * runs compatability tests returns true
-//  * if the browser is compatable
-//  * set the shared ctx variable to point to the canvas context
-//  * the typed array image_data:Uint8ClampedArray is created
-//  * @param canvas :dom  //a reference to the canvas DOM object
-//  * @param w :number //the width of the main surface
-//  * @param h :number // the height of the main surface
-//  * @returns {boolean}
-//  */
+/**
+ * initialises the pix_elf library
+ * runs compatability tests returns true
+ * if the browser is compatable
+ * set the shared ctx variable to point to the canvas context
+ * the ArrayBuffer mainBuffer is created
+ * @param canvas :dom  //a reference to the canvas DOM object
+ * @param w :number //the width of the main surface
+ * @param h :number // the height of the main surface
+ * @returns {boolean}
+ */
 export const init = (
   canvas: HTMLCanvasElement,
   w: number,
@@ -56,12 +74,21 @@ export const init = (
 
   ctx = canvas.getContext("2d")!;
 
-  imageData = ctx.getImageData(0, 0, w, h);
-  byteSurfaceWidth = w << 2; // w * 4
+  imageData = ctx.getImageData(0, 0, w, h); // the whole image data for the canvas
+  const byteSurfaceWidth = w * 4; // 4 bytes (32 bits) per pixel
   surfaceHeight = h;
   surfaceWidth = w;
   mainBuffer = new ArrayBuffer(byteSurfaceWidth * surfaceHeight);
   return true;
+};
+
+export const contextToBuffer = (
+  context: CanvasRenderingContext2D,
+  width: number,
+  height: number
+): Uint8ClampedArray => {
+  const tmpImageData: ImageData = context.getImageData(0, 0, width, height);
+  return tmpImageData.data;
 };
 
 // /**
@@ -80,17 +107,13 @@ export const init = (
 //   return _imageData;
 // };
 
-export type Surface = {
-  surface: ImageData | undefined;
-};
-
-/**
- * creates an empty unitialised surface object
- * @returns {{surface: undefined}}
- */
-export const newSurface = (): Surface => {
-  return { surface: undefined };
-};
+// /**
+//  * creates an empty unitialised surface object
+//  * @returns {{surface: undefined}}
+//  */
+// export const newSurface = (): Surface => {
+//   return { data: undefined };
+// };
 
 // /* -------- blitting using context methods --------- */
 
@@ -101,8 +124,35 @@ export const newSurface = (): Surface => {
  * @param dest
  * @constructor
  */
-export const blitCanvas = (src_surface: ImageData, src, dest) => {
-  ctx.putImageData(src_surface, dest.x, dest.y, src.x, src.y, src.w, src.h);
+export const blitCanvas = (
+  src_surface: Uint8ClampedArray,
+  src: Rect,
+  dest: Coord
+) => {
+  const imageData = new ImageData(src_surface, src.w);
+
+  ctx.putImageData(
+    imageData,
+    dest.x, // Horizontal position (x coordinate) at which to place the image data in the destination canvas
+    dest.y, // Vertical position (y coordinate) at which to place the image data in the destination canvas.
+    src.x, // Horizontal position (x coordinate) of the top-left corner from which the image data will be extracted. Defaults to 0
+    src.y, // Vertical position (y coordinate) of the top-left corner from which the image data will be extracted. Defaults to 0
+    surfaceWidth, // Width of the rectangle to be painted. Defaults to the width of the image data.
+    surfaceHeight // Height of the rectangle to be painted. Defaults to the height of the image data.
+  );
+};
+
+export const createSurface = (image: HTMLImageElement): Surface => {
+  const offscreen_canvas = document.createElement("canvas");
+  offscreen_canvas.height = image.height;
+  offscreen_canvas.width = image.width;
+  const offscreen_context = offscreen_canvas.getContext("2d")!;
+  offscreen_context.drawImage(image, 0, 0);
+  return {
+    width: image.width,
+    height: image.height,
+    data: offscreen_context.getImageData(0, 0, image.width, image.height).data, // extract typedArray
+  };
 };
 
 // /**
@@ -129,14 +179,15 @@ export const blitCanvas = (src_surface: ImageData, src, dest) => {
 
 // /* --------- quickly dump buffer on screen ------------- */
 
-// /**
-//  * this just a function to display whatever is in the buffer of a
-//  * picture object not usually used in a game
-//  * @param surface
-//  */
-// my.SURF_ShowBuffer = function (surface) {
-//   _ctx.putImageData(surface, 0, 0);
-// };
+/**
+ * this just a function to display whatever is in the buffer of a
+ * picture object not usually used in a game
+ * @param surface
+ */
+export const showImageData = function (surface: ImageData) {
+  console.log(surface.width);
+  ctx.putImageData(surface, 0, 0);
+};
 
 // /**
 //  * sort of unnecessary wrapper on drawImage
@@ -175,19 +226,25 @@ export const getError = (): string => {
   return error;
 };
 
-// /**
-//  * this is a utility function - we using it to custom blit image data
-//  * @param dst
-//  * @param dstOffset *in bytes!*
-//  * @param src
-//  * @param srcOffset *in bytes!*
-//  * @param length *in bytes!*
-//  */
-// var memcpy = function (dst, dstOffset, src, srcOffset, length) {
-//   var dstU8 = new Uint8Array(dst, dstOffset, length);
-//   var srcU8 = new Uint8Array(src, srcOffset, length);
-//   dstU8.set(srcU8);
-// };
+/**
+ * this is a utility function - we using it to custom blit image data
+ * @param dst
+ * @param dstOffset *in bytes!*
+ * @param src
+ * @param srcOffset *in bytes!*
+ * @param length *in bytes!*
+ */
+var memcpy = (
+  dst: ArrayBuffer,
+  dstOffset: number,
+  src: ArrayBuffer,
+  srcOffset: number,
+  length: number
+) => {
+  var dstU8 = new Uint8Array(dst, dstOffset, length);
+  var srcU8 = new Uint8Array(src, srcOffset, length);
+  dstU8.set(srcU8);
+};
 
 // /*
 //     var kwikShowBuffer = function(buffer) {
